@@ -1,9 +1,14 @@
-plugins = { 
+themes = { 
   {
     "catppuccin/nvim"
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    -- init = lazyLoad("lualine.nvim"),
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
   }
 }
 
-require("lazy").setup(plugins)
-
-vim.cmd.colorscheme "catppuccin"
+return themes
