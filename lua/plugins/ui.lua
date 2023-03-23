@@ -1,4 +1,12 @@
 plugins = { 
+  -- Dashboard
+  {
+    'glepnir/dashboard-nvim',
+    event = 'VimEnter',
+    config = require("ui.dashboard"),
+    dependencies = { {'nvim-tree/nvim-web-devicons'}}
+  },
+  -- Lualine
   {
     "nvim-lualine/lualine.nvim",
     -- init = lazyLoad("lualine.nvim"),
@@ -6,7 +14,12 @@ plugins = {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-  }
+  },
+  -- Indent blankline
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    config = require("ui.indent_blankline"),
+  },
 }
 
 return plugins
