@@ -5,7 +5,8 @@ themes = {
   },
   -- Material
   {
-    'marko-cerovac/material.nvim'
+    "marko-cerovac/material.nvim",
+     config = require("themes.material")
   },
 }
 
