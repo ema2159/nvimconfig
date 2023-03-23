@@ -1,14 +1,13 @@
 themes = { 
+  -- Catppuccin
   {
     "catppuccin/nvim"
   },
+  -- Material
   {
-    "nvim-lualine/lualine.nvim",
-    -- init = lazyLoad("lualine.nvim"),
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-  }
+    'marko-cerovac/material.nvim'
+  },
 }
 
+-- vim.g.material_style = "oceanic"
 return themes

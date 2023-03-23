@@ -6,4 +6,4 @@ plugins = {themes, ui, tools}
 
 require("lazy").setup(plugins, opts)
 
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "material"
