@@ -20,6 +20,11 @@ plugins = {
     "lukas-reineke/indent-blankline.nvim",
     config = require("ui.indent_blankline"),
   },
+  -- Treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    config = require("ui.treesitter"),
+  },
 }
 
 return plugins
