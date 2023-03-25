@@ -7,7 +7,7 @@ vim.opt.laststatus = 2
 vim.opt.autowrite = true
 vim.opt.autoread = true
 
--- use spaces for tabs and whatnot
+-- Use spaces for tabs and whatnot
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
@@ -20,3 +20,6 @@ vim.opt.whichwrap = "b,s,<,>,[,]"
 vim.wo.number = true
 vim.wo.cursorline = true
 vim.wo.cursorlineopt = "number"
+
+-- Make current buffer's directory the cwd
+vim.opt.autochdir = true
