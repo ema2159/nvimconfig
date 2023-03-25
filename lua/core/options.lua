@@ -23,3 +23,8 @@ vim.wo.cursorlineopt = "number"
 
 -- Make current buffer's directory the cwd
 vim.opt.autochdir = true
+
+-- Set formatting options
+vim.opt.textwidth = 120
+vim.cmd[[filetype plugin on]]
+vim.cmd[[autocmd FileType * setlocal formatoptions-=ro]]
