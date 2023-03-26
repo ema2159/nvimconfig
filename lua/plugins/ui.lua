@@ -38,6 +38,11 @@ plugins = {
     "RRethy/vim-illuminate",
     config = require("ui.vim_illuminate"),
   },
+  -- Which Key
+  {
+    "folke/which-key.nvim",
+    config = require("ui.which_key"),
+  },
 }
 
 return plugins
