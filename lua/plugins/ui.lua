@@ -25,6 +25,14 @@ plugins = {
     "nvim-treesitter/nvim-treesitter",
     config = require("ui.treesitter"),
   },
+  -- Barbar
+  {
+    "romgrk/barbar.nvim",
+    config = require("ui.barbar"),
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
 }
 
 return plugins
