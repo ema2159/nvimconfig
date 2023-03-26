@@ -4,14 +4,14 @@ function load_extensions()
 end
 
 function telescope_file_browser_conf()
-  local fb_actions = require "telescope".extensions.file_browser.actions
+  local fb_actions = require("telescope").extensions.file_browser.actions
 
   return {
     -- disables netrw and use telescope-file-browser in its place
     hijack_netrw = true,
     mappings = {
       ["i"] = {
-         ["<M-CR>"] = fb_actions.create_from_prompt -- Change to <S-CR> when appropriate terminal emulator is installed
+        ["<M-CR>"] = fb_actions.create_from_prompt, -- Change to <S-CR> when appropriate terminal emulator is installed
       },
     },
   }
@@ -19,7 +19,7 @@ end
 
 function telescope_ui_select_conf()
   return {
-     theme = "dropdown"
+    theme = "dropdown",
   }
 end
 
@@ -49,31 +49,29 @@ return function()
         results_title = false,
         theme = "ivy",
         layout_config = {
-          height = 15
+          height = 15,
         },
       },
       commands = {
         theme = "dropdown",
         layout_config = {
-          anchor = "N"
-        }
+          anchor = "N",
+        },
       },
       colorscheme = {
         enable_preview = true,
         theme = "dropdown",
         layout_config = {
-          anchor = "N"
-        }
-      }
+          anchor = "N",
+        },
+      },
     },
     extensions = {
-       ["file_browser"] = telescope_file_browser_conf(),
-       ["ui-select"] = telescope_ui_select_conf(),
+      ["file_browser"] = telescope_file_browser_conf(),
+      ["ui-select"] = telescope_ui_select_conf(),
     },
   })
 
   load_extensions()
   conf_keymaps()
 end
-
-

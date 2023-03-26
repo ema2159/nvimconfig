@@ -1,10 +1,10 @@
-plugins = { 
+plugins = {
   -- Dashboard
   {
     "glepnir/dashboard-nvim",
     event = "VimEnter",
     config = require("ui.dashboard"),
-    dependencies = { {"nvim-tree/nvim-web-devicons"} }
+    dependencies = { { "nvim-tree/nvim-web-devicons" } },
   },
   -- Lualine
   {

@@ -6,5 +6,3 @@ return function()
   vim.keymap.set("n", "<C-S-PageUp>", "<Cmd>BufferMovePrevious<CR>", {})
   vim.keymap.set("n", "<C-S-PageDown>", "<Cmd>BufferMoveNext<CR>", {})
 end
-
-

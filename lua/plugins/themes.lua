@@ -1,12 +1,12 @@
-themes = { 
+themes = {
   -- Catppuccin
   {
-    "catppuccin/nvim"
+    "catppuccin/nvim",
   },
   -- Material
   {
     "marko-cerovac/material.nvim",
-     config = require("themes.material")
+    config = require("themes.material"),
   },
 }
 

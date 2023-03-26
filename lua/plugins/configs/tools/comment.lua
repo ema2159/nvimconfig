@@ -2,7 +2,7 @@ return function()
   require("Comment").setup({
     sticky = false,
     toggler = {
-      line = "<C-_>" -- C-7
+      line = "<C-_>", -- C-7
     },
     opleader = {
       line = "<C-_>", -- C-7
@@ -12,4 +12,3 @@ return function()
     end,
   })
 end
-

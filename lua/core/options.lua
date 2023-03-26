@@ -1,5 +1,5 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.opt.backspace = "2"
 vim.opt.showcmd = true
@@ -26,5 +26,5 @@ vim.opt.autochdir = true
 
 -- Set formatting options
 vim.opt.textwidth = 120
-vim.cmd[[filetype plugin on]]
-vim.cmd[[autocmd FileType * setlocal formatoptions-=ro]]
+vim.cmd([[filetype plugin on]])
+vim.cmd([[autocmd FileType * setlocal formatoptions-=ro]])
