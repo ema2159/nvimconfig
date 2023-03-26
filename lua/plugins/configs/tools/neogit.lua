@@ -1,6 +1,12 @@
 return function()
   require("neogit").setup({
     kind = "split",
+    commit_popup = {
+      kind = "replace",
+    },  
+    preview_buffer = {
+      kind = "tab",
+    },
   })
 
   local function neogit_git_toplevel()
