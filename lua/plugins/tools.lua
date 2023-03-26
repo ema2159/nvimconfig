@@ -31,6 +31,14 @@ tools = {
     dependencies = { "nvim-telescope/telescope.nvim" },
     event = "VeryLazy",
   },
+  -- Neogit
+  {
+    "TimUntersberger/neogit",
+    config = require("tools.neogit"),
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    event = "VeryLazy",
   },
 }
 
