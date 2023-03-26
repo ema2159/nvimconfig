@@ -25,6 +25,12 @@ tools = {
     dependencies = { "nvim-telescope/telescope.nvim"},
     event = "VeryLazy"
   },
+  -- Telescope Symbols
+  {
+    "nvim-telescope/telescope-symbols.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim"},
+    event = "VeryLazy"
+  },
 }
 
 return tools

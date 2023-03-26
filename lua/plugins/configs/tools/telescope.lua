@@ -1,5 +1,5 @@
 function load_extensions()
-  require("telescope").load_extension "file_browser"
+  require("telescope").load_extension("file_browser")
   require("telescope").load_extension("ui-select")
 end
 
