@@ -26,18 +26,18 @@ end
 local function conf_keymaps()
   -- Built-in keymaps
   local builtin = require("telescope.builtin")
-  vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-  vim.keymap.set("n", "<leader>gf", builtin.git_files, {})
-  vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {})
-  vim.keymap.set("n", "<leader>bb", builtin.buffers, {})
-  vim.keymap.set("n", "<leader>hm", builtin.keymaps, {})
-  vim.keymap.set("n", "<leader>ot", builtin.colorscheme, {})
-  vim.keymap.set("n", "<M-x>", builtin.commands, {})
-  vim.keymap.set("n", "/", builtin.current_buffer_fuzzy_find, {})
+  vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
+  vim.keymap.set("n", "<leader>gf", builtin.git_files, { desc = "Git files" })
+  vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent files" })
+  vim.keymap.set("n", "<leader>bb", builtin.buffers, { desc = "Open buffers" })
+  vim.keymap.set("n", "<leader>hm", builtin.keymaps, { desc = "Describe keymaps" })
+  vim.keymap.set("n", "<leader>ot", builtin.colorscheme, { desc = "Select theme" })
+  vim.keymap.set("n", "<M-x>", builtin.commands, { desc = "Command Palette" })
+  vim.keymap.set("n", "/", builtin.current_buffer_fuzzy_find, { desc = "Fuzzy find in file" })
 
   -- Extensions keymaps
   local extensions = require("telescope").extensions
-  vim.keymap.set("n", "<leader>fb", extensions.file_browser.file_browser, {})
+  vim.keymap.set("n", "<leader>fb", extensions.file_browser.file_browser, { desc = "File browser" })
 end
 
 return function()
