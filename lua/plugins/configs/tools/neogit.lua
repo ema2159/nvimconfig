@@ -1,5 +1,7 @@
 return function()
-  require("neogit").setup({})
+  require("neogit").setup({
+    kind = "split",
+  })
 
   local function neogit_git_toplevel()
     local git_root_path =
