@@ -18,6 +18,13 @@ tools = {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim"},
     event = "VeryLazy"
+  },
+  -- Telescope UI Select
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim"},
+    event = "VeryLazy"
+  },
 }
 
 return tools

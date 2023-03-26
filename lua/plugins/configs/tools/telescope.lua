@@ -1,5 +1,6 @@
 function load_extensions()
   require("telescope").load_extension "file_browser"
+  require("telescope").load_extension("ui-select")
 end
 
 function telescope_file_browser_conf()
@@ -16,6 +17,11 @@ function telescope_file_browser_conf()
     },
   }
 end
+
+function telescope_ui_select_conf()
+  return {
+     theme = "dropdown"
+  }
 end
 
 function conf_keymaps()
@@ -63,6 +69,7 @@ return function()
     },
     extensions = {
        ["file_browser"] = telescope_file_browser_conf(),
+       ["ui-select"] = telescope_ui_select_conf(),
     },
   })
 
