@@ -8,7 +8,6 @@ function telescope_file_browser_conf()
 
   return {
     -- disables netrw and use telescope-file-browser in its place
-    theme = "ivy",
     hijack_netrw = true,
     mappings = {
       ["i"] = {
