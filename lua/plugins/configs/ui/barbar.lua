@@ -1,4 +1,4 @@
-return function()
+local function conf_keymaps()
   -- Move to previous/next
   vim.keymap.set("n", "<C-PageUp>", "<Cmd>BufferPrevious<CR>", {})
   vim.keymap.set("n", "<C-PageDown>", "<Cmd>BufferNext<CR>", {})

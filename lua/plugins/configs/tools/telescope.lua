@@ -1,9 +1,9 @@
-function load_extensions()
+local function load_extensions()
   require("telescope").load_extension("file_browser")
   require("telescope").load_extension("ui-select")
 end
 
-function telescope_file_browser_conf()
+local function telescope_file_browser_conf()
   local fb_actions = require("telescope").extensions.file_browser.actions
 
   return {
@@ -17,13 +17,13 @@ function telescope_file_browser_conf()
   }
 end
 
-function telescope_ui_select_conf()
+local function telescope_ui_select_conf()
   return {
     theme = "dropdown",
   }
 end
 
-function conf_keymaps()
+local function conf_keymaps()
   -- Built-in keymaps
   local builtin = require("telescope.builtin")
   vim.keymap.set("n", "<leader>ff", builtin.find_files, {})

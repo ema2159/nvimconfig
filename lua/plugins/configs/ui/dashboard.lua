@@ -1,14 +1,14 @@
-function browse_files()
+local function browse_files()
   local extensions = require("telescope").extensions
   return extensions.file_browser.file_browser
 end
 
-function recent_files()
+local function recent_files()
   local builtin = require("telescope.builtin")
   return builtin.oldfiles
 end
 
-function themes()
+local function themes()
   local builtin = require("telescope.builtin")
   return builtin.colorscheme
 end
