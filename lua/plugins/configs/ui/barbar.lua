@@ -12,3 +12,14 @@ return function()
   -- Buffer-picking mode
   vim.keymap.set("n", "<leader>ta", "<Cmd>BufferPick<CR>", {})
 end
+
+return function()
+  require("bufferline").setup({
+    -- Enable/disable animations
+    animation = false,
+    -- Enable/disable auto-hiding the tab bar when there is a single buffer
+    auto_hide = true,
+  })
+
+  conf_keymaps()
+end
