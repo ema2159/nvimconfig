@@ -33,6 +33,11 @@ plugins = {
       "nvim-tree/nvim-web-devicons",
     },
   },
+  -- Vim Illuminate
+  {
+    "RRethy/vim-illuminate",
+    config = require("ui.vim_illuminate"),
+  },
 }
 
 return plugins
