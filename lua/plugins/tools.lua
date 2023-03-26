@@ -16,9 +16,8 @@ tools = {
   -- Telescope File Browser
   {
     "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-telescope/telescope.nvim"},
     event = "VeryLazy"
-  }
 }
 
 return tools

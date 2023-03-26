@@ -1,5 +1,21 @@
-function conf_extensions()
+function load_extensions()
   require("telescope").load_extension "file_browser"
+end
+
+function telescope_file_browser_conf()
+  local fb_actions = require "telescope".extensions.file_browser.actions
+
+  return {
+    -- disables netrw and use telescope-file-browser in its place
+    theme = "ivy",
+    hijack_netrw = true,
+    mappings = {
+      ["i"] = {
+         ["<M-CR>"] = fb_actions.create_from_prompt -- Change to <S-CR> when appropriate terminal emulator is installed
+      },
+    },
+  }
+end
 end
 
 function conf_keymaps()
@@ -46,14 +62,11 @@ return function()
       }
     },
     extensions = {
-      file_browser = {
-        -- disables netrw and use telescope-file-browser in its place
-        hijack_netrw = true,
-      },
+       ["file_browser"] = telescope_file_browser_conf(),
     },
   })
 
-  conf_extensions()
+  load_extensions()
   conf_keymaps()
 end
 
