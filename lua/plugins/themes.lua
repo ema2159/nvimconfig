@@ -12,6 +12,11 @@ themes = {
   {
     "joshdick/onedark.vim",
   },
+  -- Monokai Pro
+  {
+    "loctvl842/monokai-pro.nvim",
+    config = require("themes.monokai_pro"),
+  },
 }
 
 -- vim.g.material_style = "oceanic"
