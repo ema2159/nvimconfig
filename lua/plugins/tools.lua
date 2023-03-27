@@ -42,6 +42,11 @@ tools = {
     "sbdchd/neoformat",
     event = "VeryLazy",
   },
+  -- Hop
+  {
+    "phaazon/hop.nvim",
+    config = require("tools.hop"),
+  },
 }
 
 return tools
