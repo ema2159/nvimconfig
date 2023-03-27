@@ -1,1 +1,4 @@
 *.~undo-tree~
+lazy-lock.json
+lazygit
+lazygit.tar.gz
