@@ -37,6 +37,12 @@ tools = {
     config = require("tools.lazygit"),
     event = "VeryLazy",
   },
+  -- Neoformat
+  {
+    "sbdchd/neoformat",
+    config = require("tools.neoformat"),
+    event = "VeryLazy",
+  },
 }
 
 return tools
