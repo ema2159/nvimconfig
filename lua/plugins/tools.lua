@@ -33,11 +33,8 @@ tools = {
   },
   -- Neogit
   {
-    "TimUntersberger/neogit",
-    config = require("tools.neogit"),
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
+    "kdheepak/lazygit.nvim",
+    config = require("tools.lazygit"),
     event = "VeryLazy",
   },
 }
