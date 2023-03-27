@@ -43,6 +43,11 @@ plugins = {
     "folke/which-key.nvim",
     config = require("ui.which_key"),
   },
+  -- Wilder
+  {
+    "gelguy/wilder.nvim",
+    config = require("ui.wilder"),
+  },
 }
 
 return plugins
