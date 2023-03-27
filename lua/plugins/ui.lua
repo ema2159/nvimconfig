@@ -48,6 +48,14 @@ plugins = {
     "gelguy/wilder.nvim",
     config = require("ui.wilder"),
   },
+  -- Nvim Tree
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = require("ui.nvim_tree"),
+  },
 }
 
 return plugins
