@@ -7,6 +7,14 @@ return function()
     preview_buffer = {
       kind = "tab",
     },
+    mappings = {
+      -- modify status buffer mappings
+      status = {
+        -- Adds a mapping with "B" as key that does the "BranchPopup" command
+        ["F"] = "PullPopup",
+        ["k"] = "Discard"
+      }
+    },
   })
 
   local function neogit_git_toplevel()
