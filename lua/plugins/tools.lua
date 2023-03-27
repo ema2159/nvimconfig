@@ -40,7 +40,6 @@ tools = {
   -- Neoformat
   {
     "sbdchd/neoformat",
-    config = require("tools.neoformat"),
     event = "VeryLazy",
   },
 }
