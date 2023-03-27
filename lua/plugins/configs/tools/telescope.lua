@@ -26,7 +26,7 @@ end
 function fuzzy_find_under_cursor()
   local builtin = require("telescope.builtin")
   word_under_cursor = vim.fn.expand("<cword>")
-  builtin.current_buffer_fuzzy_find({default_text=word_under_cursor})
+  builtin.current_buffer_fuzzy_find({ default_text = word_under_cursor })
 end
 
 local function conf_keymaps()
