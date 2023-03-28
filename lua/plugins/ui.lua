@@ -61,6 +61,11 @@ plugins = {
     "rcarriga/nvim-notify",
     config = require("ui.notify"),
   },
+  -- Git Signs
+  {
+    "lewis6991/gitsigns.nvim",
+    config = require("ui.gitsigns"),
+  },
 }
 
 return plugins
