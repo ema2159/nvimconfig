@@ -1,6 +1,7 @@
 local function load_extensions()
   require("telescope").load_extension("file_browser")
   require("telescope").load_extension("ui-select")
+  require("telescope").load_extension("notify")
 end
 
 local function telescope_file_browser_conf()

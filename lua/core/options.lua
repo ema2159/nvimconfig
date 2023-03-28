@@ -28,3 +28,6 @@ vim.opt.autochdir = true
 vim.opt.textwidth = 120
 vim.cmd([[filetype plugin on]])
 vim.cmd([[autocmd FileType * setlocal formatoptions-=ro]])
+
+-- Set termguicolors
+vim.opt.termguicolors = true

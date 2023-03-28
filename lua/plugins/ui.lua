@@ -56,6 +56,11 @@ plugins = {
     },
     config = require("ui.nvim_tree"),
   },
+  -- Notify
+  {
+    "rcarriga/nvim-notify",
+    config = require("ui.notify"),
+  },
 }
 
 return plugins
