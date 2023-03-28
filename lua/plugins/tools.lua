@@ -47,6 +47,11 @@ tools = {
     "phaazon/hop.nvim",
     config = require("tools.hop"),
   },
+  -- Toggleterm
+  {
+    "akinsho/toggleterm.nvim",
+    config = require("tools.toggleterm"),
+  },
 }
 
 return tools
