@@ -10,7 +10,8 @@ themes = {
   },
   -- One Dark
   {
-    "joshdick/onedark.vim",
+    "navarasu/onedark.nvim",
+    config = require("themes.onedark"),
   },
   -- Monokai Pro
   {
