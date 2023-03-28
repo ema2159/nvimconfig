@@ -46,6 +46,17 @@ tools = {
     "akinsho/toggleterm.nvim",
     config = require("tools.toggleterm"),
   },
+  -- LSP config
+  {
+    "neovim/nvim-lspconfig",
+    config = require("tools.lspconfig"),
+  },
+  -- Mason
+  {
+    "williamboman/mason.nvim",
+    build = ":MasonUpdate", -- :MasonUpdate updates registry contents
+    config = require("tools.mason"),
+  },
 }
 
 return tools
