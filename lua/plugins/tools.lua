@@ -31,12 +31,6 @@ tools = {
     dependencies = { "nvim-telescope/telescope.nvim" },
     event = "VeryLazy",
   },
-  -- Neogit
-  {
-    "kdheepak/lazygit.nvim",
-    config = require("tools.lazygit"),
-    event = "VeryLazy",
-  },
   -- Neoformat
   {
     "sbdchd/neoformat",
