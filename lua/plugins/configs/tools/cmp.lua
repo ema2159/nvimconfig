@@ -9,7 +9,7 @@ local function cmp_setup(cmp)
       expand = function(args)
         vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
         -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-       -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
         -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       end,
     },
@@ -39,24 +39,6 @@ local function cmp_setup(cmp)
   })
 end
 
-local function config_cmdline(cmp)
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(":", {
-    formatting = {
-      format = function(entry, vim_item)
-        vim_item.kind = ""
-        return vim_item
-      end,
-    },
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-      { name = "path" },
-    }, {
-      { name = "cmdline" },
-    }),
-  })
-end
-
 local function config_git(cmp)
   cmp.setup.filetype("gitcommit", {
     sources = cmp.config.sources({
@@ -81,6 +63,5 @@ return function()
 
   cmp_setup(cmp)
   config_git(cmp)
-  config_cmdline(cmp)
   config_lsp()
 end
