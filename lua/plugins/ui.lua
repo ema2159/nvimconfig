@@ -51,10 +51,15 @@ plugins = {
     },
     config = require("ui.nvim_tree"),
   },
-  -- Notify
+  -- Noice
   {
-    "rcarriga/nvim-notify",
-    config = require("ui.notify"),
+    "folke/noice.nvim",
+    config = require("ui.noice"),
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+    event = "VeryLazy",
   },
   -- Git Signs
   {
