@@ -7,4 +7,4 @@ plugins = { themes, ui, tools, editor }
 
 require("lazy").setup(plugins, opts)
 
-vim.cmd.colorscheme("catppuccin-frappe")
+vim.cmd.colorscheme("dracula")

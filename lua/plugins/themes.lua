@@ -28,7 +28,7 @@ themes = {
   },
   -- Gruvbox Material
   {
-    "sainnhe/gruvbox-material",
+    "ellisonleao/gruvbox.nvim",
   },
   -- VSCode (Dark+ and Light+)
   {
@@ -38,7 +38,10 @@ themes = {
   {
     "savq/melange-nvim",
   },
+  -- Nord
+  {
+    "shaunsingh/nord.nvim"
+  },
 }
 
--- vim.g.material_style = "oceanic"
 return themes
