@@ -14,6 +14,10 @@ editor = {
     "fedepujol/move.nvim",
     config = require("editor.move"),
   },
+  -- Vim Visual Multi
+  {
+    "mg979/vim-visual-multi",
+  },
   -- cmp
   {
     "hrsh7th/nvim-cmp",
