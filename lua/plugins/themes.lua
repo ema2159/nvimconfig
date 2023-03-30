@@ -18,6 +18,26 @@ themes = {
     "loctvl842/monokai-pro.nvim",
     config = require("themes.monokai_pro"),
   },
+  -- Dracula
+  {
+    "Mofiqul/dracula.nvim",
+  },
+  -- Kanagawa
+  {
+    "rebelot/kanagawa.nvim",
+  },
+  -- Gruvbox Material
+  {
+    "sainnhe/gruvbox-material",
+  },
+  -- VSCode (Dark+ and Light+)
+  {
+    "Mofiqul/vscode.nvim",
+  },
+  -- Melange
+  {
+    "savq/melange-nvim",
+  },
 }
 
 -- vim.g.material_style = "oceanic"
