@@ -1,9 +1,4 @@
 tools = {
-  -- Comment
-  {
-    "numToStr/Comment.nvim",
-    config = require("tools.comment"),
-  },
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
@@ -36,11 +31,6 @@ tools = {
     "sbdchd/neoformat",
     event = "VeryLazy",
   },
-  -- Hop
-  {
-    "phaazon/hop.nvim",
-    config = require("tools.hop"),
-  },
   -- Toggleterm
   {
     "akinsho/toggleterm.nvim",
@@ -56,18 +46,6 @@ tools = {
     "williamboman/mason.nvim",
     build = ":MasonUpdate", -- :MasonUpdate updates registry contents
     config = require("tools.mason"),
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      "onsails/lspkind.nvim",
-    },
-    event = "InsertEnter",
-    config = require("tools.cmp"),
   },
 }
 
