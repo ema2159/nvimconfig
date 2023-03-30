@@ -9,6 +9,11 @@ editor = {
     "phaazon/hop.nvim",
     config = require("editor.hop"),
   },
+  -- Move
+  {
+    "fedepujol/move.nvim",
+    config = require("editor.move"),
+  },
   -- cmp
   {
     "hrsh7th/nvim-cmp",
