@@ -31,3 +31,6 @@ vim.cmd([[autocmd FileType * setlocal formatoptions-=ro]])
 
 -- Set termguicolors
 vim.opt.termguicolors = true
+
+-- Set GUI font
+vim.opt.guifont = { "JetBrainsMono NFM", ":h12" }
