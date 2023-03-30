@@ -66,6 +66,14 @@ plugins = {
     "lewis6991/gitsigns.nvim",
     config = require("ui.gitsigns"),
   },
+  -- TODO Comments
+  {
+    "folke/todo-comments.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim"
+    },
+    config = require("ui.todo_comments")
+  },
 }
 
 return plugins
