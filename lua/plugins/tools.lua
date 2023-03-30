@@ -5,25 +5,11 @@ tools = {
     config = require("tools.telescope"),
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-file-browser.nvim",
+      "nvim-telescope/telescope-ui-select.nvim",
+      "nvim-telescope/telescope-symbols.nvim",
+      "nvim-telescope/telescope-project.nvim",
     },
-    event = "VeryLazy",
-  },
-  -- Telescope File Browser
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim" },
-    event = "VeryLazy",
-  },
-  -- Telescope UI Select
-  {
-    "nvim-telescope/telescope-ui-select.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim" },
-    event = "VeryLazy",
-  },
-  -- Telescope Symbols
-  {
-    "nvim-telescope/telescope-symbols.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim" },
     event = "VeryLazy",
   },
   -- Neoformat
@@ -46,6 +32,7 @@ tools = {
     "williamboman/mason.nvim",
     build = ":MasonUpdate", -- :MasonUpdate updates registry contents
     config = require("tools.mason"),
+    dependencies = { "williamboman/mason-lspconfig.nvim" },
   },
 }
 
