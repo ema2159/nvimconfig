@@ -35,7 +35,7 @@ local function conf_keymaps()
   local extensions = require("telescope").extensions
 
   -- Built-in keymaps
-  vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
+  vim.keymap.set("n", "<leader>fs", builtin.find_files, { desc = "Find files" })
   vim.keymap.set("n", "<leader>gf", builtin.git_files, { desc = "Git files" })
   vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent files" })
   vim.keymap.set("n", "<leader>bb", builtin.buffers, { desc = "Open buffers" })
@@ -46,7 +46,7 @@ local function conf_keymaps()
   vim.keymap.set("n", "#", fuzzy_find_under_cursor, { desc = "Fuzzy find in file" })
 
   -- Extensions keymaps
-  vim.keymap.set("n", "<leader>fb", extensions.file_browser.file_browser, { desc = "File browser" })
+  vim.keymap.set("n", "<leader>ff", extensions.file_browser.file_browser, { desc = "File browser" })
 end
 
 return function()
