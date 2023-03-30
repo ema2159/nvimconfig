@@ -2,6 +2,7 @@ local function load_extensions()
   require("telescope").load_extension("file_browser")
   require("telescope").load_extension("ui-select")
   require("telescope").load_extension("notify")
+  require("telescope").load_extension("project")
 end
 
 local function telescope_file_browser_conf()
@@ -48,6 +49,7 @@ local function conf_keymaps()
 
   -- Extensions keymaps
   vim.keymap.set("n", "<leader>ff", extensions.file_browser.file_browser, { desc = "File browser" })
+  vim.keymap.set("n", "<leader>pp", extensions.project.project, { desc = "Project" })
 end
 
 return function()

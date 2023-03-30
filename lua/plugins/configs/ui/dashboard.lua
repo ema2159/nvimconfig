@@ -8,6 +8,11 @@ local function recent_files()
   return builtin.oldfiles
 end
 
+local function projects()
+  local extensions = require("telescope").extensions
+  return extensions.project.project
+end
+
 local function themes()
   local builtin = require("telescope.builtin")
   return builtin.colorscheme
@@ -47,12 +52,22 @@ return function()
           action = recent_files(),
         },
         {
+          icon = "  ",
+          icon_hl = "Title",
+          desc = "Projects",
+          desc_hl = "String",
+          key = "p",
+          keymap = "SPC p p",
+          key_hl = "Number",
+          action = projects(),
+        },
+        {
           icon = "  ",
           icon_hl = "Title",
           desc = "File Browser",
           desc_hl = "String",
           key = "b",
-          keymap = "SPC f b",
+          keymap = "SPC f f",
           key_hl = "Number",
           action = browse_files(),
         },
