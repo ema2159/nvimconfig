@@ -21,4 +21,6 @@ return function()
       "which-key",
     },
   })
+
+  vim.api.nvim_create_user_command("MaterialSelect", require("material.functions").find_style, {})
 end
