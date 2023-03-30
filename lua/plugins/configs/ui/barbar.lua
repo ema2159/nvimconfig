@@ -18,7 +18,7 @@ return function()
     -- Enable/disable animations
     animation = false,
     -- Enable/disable auto-hiding the tab bar when there is a single buffer
-    auto_hide = true,
+    auto_hide = false,
   })
 
   conf_keymaps()
