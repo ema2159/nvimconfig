@@ -5,6 +5,7 @@ return function()
         custom_only = false,
         list = {
           { key = "?", action = "Help", action_cb = require("nvim-tree.api").tree.toggle_help },
+          { key = "<M-CR>", action = "CD", action_cb = require("nvim-tree.api").tree.change_root_to_node },
         },
       },
     },
