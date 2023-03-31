@@ -34,6 +34,11 @@ tools = {
     config = require("tools.mason"),
     dependencies = { "williamboman/mason-lspconfig.nvim" },
   },
+  -- Vim Mundo
+  {
+    "simnalamburt/vim-mundo",
+    config = require("tools.vim_mundo"),
+  },
 }
 
 return tools
