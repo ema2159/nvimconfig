@@ -61,16 +61,6 @@ local function cmp_setup(cmp, luasnip)
   })
 end
 
-local function config_git(cmp)
-  cmp.setup.filetype("gitcommit", {
-    sources = cmp.config.sources({
-      { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
-    }, {
-      { name = "buffer" },
-    }),
-  })
-end
-
 local function config_lsp()
   -- Set up lspconfig.
   local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -84,7 +74,6 @@ return function()
   local cmp = require("cmp")
   local luasnip = require("luasnip")
 
-  config_git(cmp)
   cmp_setup(cmp, luasnip)
   config_lsp()
 end
