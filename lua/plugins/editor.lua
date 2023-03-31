@@ -27,9 +27,21 @@ editor = {
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "onsails/lspkind.nvim",
+      "saadparwaiz1/cmp_luasnip",
     },
+    version = false, -- last release is way too old
     event = "InsertEnter",
     config = require("editor.cmp"),
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+    },
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp",
+    config = require("editor.luasnip"),
   },
 }
 
