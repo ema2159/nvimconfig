@@ -18,7 +18,7 @@ editor = {
   {
     "mg979/vim-visual-multi",
   },
-  -- cmp
+  -- Cmp
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -33,6 +33,7 @@ editor = {
     event = "InsertEnter",
     config = require("editor.cmp"),
   },
+  -- Luasnip
   {
     "L3MON4D3/LuaSnip",
     -- follow latest release.
@@ -42,6 +43,14 @@ editor = {
     -- install jsregexp (optional!).
     build = "make install_jsregexp",
     config = require("editor.luasnip"),
+  },
+  -- Nvim Autopairs
+  {
+    "windwp/nvim-autopairs",
+    dependencies = {
+      "hrsh7th/nvim-cmp",
+    },
+    config = require("editor.nvim_autopairs"),
   },
 }
 
