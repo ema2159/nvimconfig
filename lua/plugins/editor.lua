@@ -40,8 +40,6 @@ editor = {
     dependencies = {
       "rafamadriz/friendly-snippets",
     },
-    -- install jsregexp (optional!).
-    build = "make install_jsregexp",
     config = require("editor.luasnip"),
   },
   -- Nvim Autopairs
