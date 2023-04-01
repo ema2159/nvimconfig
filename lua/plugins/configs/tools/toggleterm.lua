@@ -15,10 +15,10 @@ return function()
   vim.api.nvim_set_keymap(
     "n",
     "<F5>",
-    "<Cmd>ToggleTerm size=20 dir=%d direction=horizontal<CR>",
+    "<Cmd>ToggleTerm size=20 dir=%d direction=float<CR>",
     { desc = "Toggle terminal" }
   )
-  vim.keymap.set("t", "<F5>", "<Cmd>ToggleTerm<CR>", opts)
+  vim.keymap.set("t", "<F5>", "<Cmd>ToggleTerm<CR>")
 
   -- Lazygit
   config_lazygit()
