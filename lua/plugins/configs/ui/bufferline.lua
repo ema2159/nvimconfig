@@ -1,0 +1,34 @@
+local function conf_keymaps()
+  -- Move to previous/next
+  vim.keymap.set({ "n", "v", "i" }, "<C-PageUp>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Previous tab" })
+  vim.keymap.set({ "n", "v", "i" }, "<C-PageDown>", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next tab" })
+  -- Re-order tabs
+  vim.keymap.set({ "n", "v", "i" }, "<C-S-PageUp>", "<Cmd>BufferLineMovePrev<CR>", { desc = "Move tab left" })
+  vim.keymap.set({ "n", "v", "i" }, "<C-S-PageDown>", "<Cmd>BufferLineMoveNext<CR>", { desc = "Move tab right" })
+  -- Buffer-picking mode
+  vim.keymap.set("n", "<leader>ta", "<Cmd>BufferLinePick<CR>", { desc = "Pick tab" })
+  vim.keymap.set("n", "<leader>ta", "<Cmd>BufferLinePickClose<CR>", { desc = "Pick tab close" })
+end
+
+return function()
+  local bufferline = require("bufferline")
+  bufferline.setup({
+    options = {
+      offsets = {
+        {
+          filetype = "NvimTree",
+          text = "File Explorer",
+          text_align = "left",
+          separator = false,
+        },
+        hover = {
+          enabled = true,
+          delay = 200,
+          reveal = { 'close' }
+        },
+      },
+    },
+  })
+
+  conf_keymaps()
+end

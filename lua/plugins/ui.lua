@@ -30,7 +30,7 @@ local plugins = {
   {
     "akinsho/bufferline.nvim",
     config = require("ui.bufferline"),
-    dependencies = {
+   dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
   },
