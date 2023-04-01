@@ -49,9 +49,9 @@ local function keymaps_config()
 
       -- Buffer local mappings.
       -- See `:help vim.lsp.*` for documentation on any of the below functions
-      vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = ev.buf, desc = "Jump to declaration" })
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = ev.buf, desc = "Jump to definition" })
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = ev.buf, desc = "Hover" })
+      vim.keymap.set("n", "gd", "<Cmd>Lspsaga peek_definition<CR>", { desc = "Peek to definition" })
+      vim.keymap.set("n", "gD", "<Cmd>Lspsaga goto_definition<CR>", { desc = "Jump to definition" })
+      vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", { desc = "Hover" })
       vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = ev.buf, desc = "Implementations" })
       vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "Signature help" })
       vim.keymap.set(
@@ -69,13 +69,32 @@ local function keymaps_config()
       vim.keymap.set("n", "<leader>lwl", function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
       end, { buffer = ev.buf, desc = "List workspace folders" })
-      vim.keymap.set("n", "<leader>lD", vim.lsp.buf.type_definition, { buffer = ev.buf, desc = "Type definition" })
-      vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, { buffer = ev.buf, desc = "Rename" })
-      vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { buffer = ev.buf, desc = "Code actions" })
+      vim.keymap.set(
+        "n",
+        "<leader>lD",
+        "<Cmd>Lspsaga peek_type_definition<CR>",
+        { buffer = ev.buf, desc = "Type definition" }
+      )
+      vim.keymap.set("n", "<leader>lo", "<Cmd>Lspsaga outline<CR>", { desc = "Show outline" })
+      vim.keymap.set("n", "<leader>lr", "<Cmd>Lspsaga rename ++project<CR>", { desc = "Rename" })
+      vim.keymap.set({ "n", "v" }, "<leader>la", "<Cmd>Lspsaga code_action<CR>", { desc = "Code actions" })
       vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "References" })
       vim.keymap.set("n", "<leader>lf", function()
         vim.lsp.buf.format({ async = true })
       end, { buffer = ev.buf, desc = "Format file" })
+
+      vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { desc = "LSP finder" })
+
+      -- Diagnostics keymaps
+      vim.keymap.set("n", "<leader>lsl", "<cmd>Lspsaga show_line_diagnostics<CR>", { desc = "Line diagnostics" })
+      vim.keymap.set("n", "<leader>lsb", "<cmd>Lspsaga show_buf_diagnostics<CR>", { desc = "Buffer diagnostics" })
+      vim.keymap.set(
+        "n",
+        "<leader>lsw",
+        "<cmd>Lspsaga show_workspace_diagnostics<CR>",
+        { desc = "Workspace diagnostics" }
+      )
+      vim.keymap.set("n", "<leader>lsc", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { desc = "Cursor diagnostics" })
     end,
   })
 end
@@ -83,5 +102,7 @@ end
 return function()
   local lspconfig = require("lspconfig")
   servers_config(lspconfig)
+  -- LSP Saga
+  require("lspsaga").setup()
   keymaps_config()
 end

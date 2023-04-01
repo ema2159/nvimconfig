@@ -26,6 +26,16 @@ tools = {
   {
     "neovim/nvim-lspconfig",
     config = require("tools.lspconfig"),
+    dependencies = {
+      {
+        "glepnir/lspsaga.nvim",
+        -- config = require("tools.lspsaga"),
+        dependencies = {
+          { "nvim-tree/nvim-web-devicons" },
+          { "nvim-treesitter/nvim-treesitter" },
+        },
+      },
+    },
   },
   -- Mason
   {
