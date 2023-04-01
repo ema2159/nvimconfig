@@ -103,7 +103,5 @@ end
 return function()
   local lspconfig = require("lspconfig")
   servers_config(lspconfig)
-  -- LSP Saga
-  require("lspsaga").setup()
   keymaps_config()
 end

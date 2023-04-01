@@ -30,7 +30,8 @@ local tools = {
     dependencies = {
       {
         "glepnir/lspsaga.nvim",
-        -- config = require("tools.lspsaga"),
+        config = require("tools.lspsaga"),
+        event = "LspAttach",
         dependencies = {
           { "nvim-tree/nvim-web-devicons" },
           { "nvim-treesitter/nvim-treesitter" },
