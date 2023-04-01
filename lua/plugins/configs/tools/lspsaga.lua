@@ -9,10 +9,10 @@ return function()
       keys = {
         quit = "q",
         expand_or_jump = "<CR>",
-      }
+      },
     },
     definition = {
       quit = { "q", "<Esc>" },
-    }
+    },
   })
 end

@@ -30,7 +30,7 @@ local plugins = {
   {
     "akinsho/bufferline.nvim",
     config = require("ui.bufferline"),
-   dependencies = {
+    dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
   },
@@ -71,9 +71,9 @@ local plugins = {
   {
     "folke/todo-comments.nvim",
     dependencies = {
-      "nvim-lua/plenary.nvim"
+      "nvim-lua/plenary.nvim",
     },
-    config = require("ui.todo_comments")
+    config = require("ui.todo_comments"),
   },
 }
 
