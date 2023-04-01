@@ -18,6 +18,7 @@ plugins = {
   -- Indent blankline
   {
     "lukas-reineke/indent-blankline.nvim",
+    event = "BufEnter",
     config = require("ui.indent_blankline"),
   },
   -- Treesitter
