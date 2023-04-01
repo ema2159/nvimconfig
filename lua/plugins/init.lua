@@ -5,6 +5,8 @@ local editor = require("plugins.editor")
 
 local plugins = { themes, ui, tools, editor }
 
-require("lazy").setup(plugins, opts)
+COLORSCHEME = "catppuccin-frappe"
 
-vim.cmd.colorscheme("dracula")
+require("lazy").setup(plugins)
+
+vim.cmd.colorscheme(COLORSCHEME)

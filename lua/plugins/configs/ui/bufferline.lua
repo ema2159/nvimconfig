@@ -30,5 +30,7 @@ return function()
     },
   })
 
+  vim.cmd.colorscheme(COLORSCHEME)
+
   conf_keymaps()
 end
