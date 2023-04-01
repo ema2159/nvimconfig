@@ -10,8 +10,7 @@ themes = {
   },
   -- One Dark
   {
-    "navarasu/onedark.nvim",
-    config = require("themes.onedark"),
+    "olimorris/onedarkpro.nvim",
   },
   -- Monokai Pro
   {
@@ -40,7 +39,31 @@ themes = {
   },
   -- Nord
   {
-    "shaunsingh/nord.nvim"
+    "shaunsingh/nord.nvim",
+  },
+  -- Nightfly
+  {
+    "bluz71/vim-nightfly-colors",
+  },
+  -- Moonfly
+  {
+    "bluz71/vim-moonfly-colors",
+  },
+  -- Tokyonight
+  {
+    "folke/tokyonight.nvim",
+  },
+  -- Oxacarbon
+  {
+    "nyoom-engineering/oxocarbon.nvim",
+  },
+  -- GitHub Nvim Theme
+  {
+    "projekt0n/github-nvim-theme",
+  },
+  -- Nightfox
+  {
+    "EdenEast/nightfox.nvim",
   },
 }
 
