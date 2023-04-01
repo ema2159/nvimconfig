@@ -1,4 +1,4 @@
-themes = {
+local themes = {
   -- Catppuccin
   {
     "catppuccin/nvim",

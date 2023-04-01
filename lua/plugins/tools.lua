@@ -1,4 +1,4 @@
-tools = {
+local tools = {
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",

@@ -1,4 +1,4 @@
-editor = {
+local editor = {
   -- Comment
   {
     "numToStr/Comment.nvim",

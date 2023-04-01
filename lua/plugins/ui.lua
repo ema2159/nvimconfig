@@ -1,4 +1,4 @@
-plugins = {
+local plugins = {
   -- Dashboard
   {
     "glepnir/dashboard-nvim",
@@ -26,10 +26,10 @@ plugins = {
     "nvim-treesitter/nvim-treesitter",
     config = require("ui.treesitter"),
   },
-  -- Barbar
+  -- Bufferline
   {
-    "romgrk/barbar.nvim",
-    config = require("ui.barbar"),
+    "akinsho/bufferline.nvim",
+    config = require("ui.bufferline"),
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
