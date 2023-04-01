@@ -77,3 +77,4 @@ return function()
   cmp_setup(cmp, luasnip)
   config_lsp()
 end
+
