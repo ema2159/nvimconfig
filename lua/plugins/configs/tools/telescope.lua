@@ -25,9 +25,9 @@ local function telescope_ui_select_conf()
   }
 end
 
-function fuzzy_find_under_cursor()
+local function fuzzy_find_under_cursor()
   local builtin = require("telescope.builtin")
-  word_under_cursor = vim.fn.expand("<cword>")
+  local word_under_cursor = vim.fn.expand("<cword>")
   builtin.current_buffer_fuzzy_find({ default_text = word_under_cursor })
 end
 
