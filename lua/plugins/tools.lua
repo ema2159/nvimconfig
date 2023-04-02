@@ -46,6 +46,12 @@ local tools = {
     config = require("tools.mason"),
     dependencies = { "williamboman/mason-lspconfig.nvim" },
   },
+  -- Null LS
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = require("tools.null_ls"),
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
   -- Vim Mundo
   {
     "simnalamburt/vim-mundo",
