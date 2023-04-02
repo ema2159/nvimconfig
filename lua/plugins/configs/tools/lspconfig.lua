@@ -50,9 +50,6 @@ local function keymaps_config()
 
       -- Buffer local mappings.
       -- See `:help vim.lsp.*` for documentation on any of the below functions
-      vim.keymap.set("n", "gd", "<Cmd>Lspsaga peek_definition<CR>", { desc = "Peek to definition" })
-      vim.keymap.set("n", "gD", "<Cmd>Lspsaga goto_definition<CR>", { desc = "Jump to definition" })
-      vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", { desc = "Hover" })
       vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = ev.buf, desc = "Implementations" })
       vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "Signature help" })
       vim.keymap.set(
@@ -70,21 +67,10 @@ local function keymaps_config()
       vim.keymap.set("n", "<leader>lwl", function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
       end, { buffer = ev.buf, desc = "List workspace folders" })
-      vim.keymap.set(
-        "n",
-        "<leader>lD",
-        "<Cmd>Lspsaga peek_type_definition<CR>",
-        { buffer = ev.buf, desc = "Type definition" }
-      )
-      vim.keymap.set("n", "<leader>lo", "<Cmd>Lspsaga outline<CR>", { desc = "Show outline" })
-      vim.keymap.set("n", "<leader>lr", "<Cmd>Lspsaga rename ++project<CR>", { desc = "Rename" })
-      vim.keymap.set({ "n", "v" }, "<leader>la", "<Cmd>Lspsaga code_action<CR>", { desc = "Code actions" })
       vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "References" })
       vim.keymap.set("n", "<leader>lf", function()
         vim.lsp.buf.format({ async = true })
       end, { buffer = ev.buf, desc = "Format file" })
-
-      vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { desc = "LSP finder" })
     end,
   })
 end
