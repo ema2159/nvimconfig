@@ -8,6 +8,7 @@ local function conf_keymaps()
   -- Buffer-picking mode
   vim.keymap.set("n", "<leader>tp", "<Cmd>BufferLinePick<CR>", { desc = "Pick tab" })
   vim.keymap.set("n", "<leader>tc", "<Cmd>BufferLinePickClose<CR>", { desc = "Pick tab close" })
+  vim.keymap.set("n", "<leader>tP", "<Cmd>BufferLineTogglePin<CR>", { desc = "Toggle tab pin" })
 end
 
 return function()
