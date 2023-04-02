@@ -63,6 +63,12 @@ local tools = {
     "simnalamburt/vim-mundo",
     config = require("tools.vim_mundo"),
   },
+  -- Peek
+  {
+    "toppair/peek.nvim",
+    config = require("tools.peek"),
+    build = "deno task --quiet build:fast",
+  },
 }
 
 return tools
