@@ -85,17 +85,6 @@ local function keymaps_config()
       end, { buffer = ev.buf, desc = "Format file" })
 
       vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { desc = "LSP finder" })
-
-      -- Diagnostics keymaps
-      vim.keymap.set("n", "<leader>lsl", "<cmd>Lspsaga show_line_diagnostics<CR>", { desc = "Line diagnostics" })
-      vim.keymap.set("n", "<leader>lsb", "<cmd>Lspsaga show_buf_diagnostics<CR>", { desc = "Buffer diagnostics" })
-      vim.keymap.set(
-        "n",
-        "<leader>lsw",
-        "<cmd>Lspsaga show_workspace_diagnostics<CR>",
-        { desc = "Workspace diagnostics" }
-      )
-      vim.keymap.set("n", "<leader>lsc", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { desc = "Cursor diagnostics" })
     end,
   })
 end

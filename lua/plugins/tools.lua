@@ -52,6 +52,12 @@ local tools = {
     config = require("tools.null_ls"),
     dependencies = { "nvim-lua/plenary.nvim" },
   },
+  -- Trouble
+  {
+    "folke/trouble.nvim",
+    config = require("tools.trouble"),
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
   -- Vim Mundo
   {
     "simnalamburt/vim-mundo",
