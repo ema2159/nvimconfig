@@ -68,9 +68,6 @@ local function keymaps_config()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
       end, { buffer = ev.buf, desc = "List workspace folders" })
       vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "References" })
-      vim.keymap.set("n", "<leader>lf", function()
-        vim.lsp.buf.format({ async = true })
-      end, { buffer = ev.buf, desc = "Format file" })
     end,
   })
 end
