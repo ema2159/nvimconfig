@@ -2,21 +2,25 @@ local editor = {
   -- Comment
   {
     "numToStr/Comment.nvim",
+    event = "BufEnter",
     config = require("editor.comment"),
   },
   -- Hop
   {
     "phaazon/hop.nvim",
+    event = "BufEnter",
     config = require("editor.hop"),
   },
   -- Move
   {
     "fedepujol/move.nvim",
+    event = "BufEnter",
     config = require("editor.move"),
   },
   -- Vim Visual Multi
   {
     "mg979/vim-visual-multi",
+    event = "BufEnter",
   },
   -- Cmp
   {
@@ -45,6 +49,7 @@ local editor = {
   -- Nvim Autopairs
   {
     "windwp/nvim-autopairs",
+    event = "InsertEnter",
     dependencies = {
       "hrsh7th/nvim-cmp",
     },
