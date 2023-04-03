@@ -75,6 +75,11 @@ local plugins = {
     },
     config = require("ui.todo_comments"),
   },
+  -- Fidget
+  {
+    "j-hui/fidget.nvim",
+    config = require("ui.fidget"),
+  },
 }
 
 return plugins
