@@ -16,8 +16,18 @@ return function()
     },
   })
 
+  local function goto_definition_mark()
+    vim.cmd("norm! mD")
+    vim.cmd("Lspsaga goto_definition")
+  end
+
+  local function go_back_from_definition()
+    vim.cmd("norm! `D")
+  end
+
   vim.keymap.set("n", "gd", "<Cmd>Lspsaga peek_definition<CR>", { desc = "Peek to definition" })
-  vim.keymap.set("n", "gD", "<Cmd>Lspsaga goto_definition<CR>", { desc = "Jump to definition" })
+  vim.keymap.set("n", "gD", goto_definition_mark, { desc = "Jump to definition" })
+  vim.keymap.set("n", "gb", go_back_from_definition, { desc = "Jump to definition" })
   vim.keymap.set(
   "n",
   "<leader>lD",
