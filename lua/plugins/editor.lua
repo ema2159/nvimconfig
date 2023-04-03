@@ -55,6 +55,11 @@ local editor = {
     },
     config = require("editor.nvim_autopairs"),
   },
+  {
+    "kylechui/nvim-surround",
+    event = "VeryLazy",
+    config = require("editor.nvim_surround")
+  },
 }
 
 return editor
