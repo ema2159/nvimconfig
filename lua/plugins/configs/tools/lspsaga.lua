@@ -14,6 +14,12 @@ return function()
     definition = {
       quit = { "q", "<Esc>" },
     },
+    finder = {
+      keys = {
+        expand_or_jump = "<CR>",
+        quit = { "q", "<ESC>" },
+      },
+    },
   })
 
   local function goto_definition_mark()
