@@ -69,6 +69,12 @@ local tools = {
     config = require("tools.peek"),
     build = "deno task --quiet build:fast",
   },
+  -- Silicon
+  {
+    "krivahtoo/silicon.nvim",
+    config = require("tools.silicon"),
+    build = "./install.sh",
+  },
 }
 
 return tools
