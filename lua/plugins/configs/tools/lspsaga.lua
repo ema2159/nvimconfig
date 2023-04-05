@@ -28,7 +28,7 @@ return function()
     -- Insert current buffer position into a stack before jumping to definition
     local curr_buff = vim.api.nvim_get_current_buf()
     local cursor_pos = vim.api.nvim_win_get_cursor(0)
-    local marker_info = {curr_buff, cursor_pos}
+    local marker_info = { curr_buff, cursor_pos }
     table.insert(goto_definition_stack, marker_info)
     vim.cmd("Lspsaga goto_definition")
   end
@@ -49,12 +49,7 @@ return function()
   vim.keymap.set("n", "gd", "<Cmd>Lspsaga peek_definition<CR>", { desc = "Peek to definition" })
   vim.keymap.set("n", "gD", goto_definition_mark, { desc = "Jump to definition" })
   vim.keymap.set("n", "gb", go_back_from_definition, { desc = "Jump to definition" })
-  vim.keymap.set(
-  "n",
-  "<leader>lD",
-  "<Cmd>Lspsaga peek_type_definition<CR>",
-  { desc = "Type definition" }
-  )
+  vim.keymap.set("n", "<leader>lD", "<Cmd>Lspsaga peek_type_definition<CR>", { desc = "Type definition" })
   vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", { desc = "Hover" })
   vim.keymap.set("n", "<leader>lo", "<Cmd>Lspsaga outline<CR>", { desc = "Show outline" })
   vim.keymap.set("n", "<leader>lr", "<Cmd>Lspsaga rename ++project<CR>", { desc = "Rename" })
