@@ -37,6 +37,7 @@ local plugins = {
   -- Vim Illuminate
   {
     "RRethy/vim-illuminate",
+    event = "BufEnter",
     config = require("ui.vim_illuminate"),
   },
   -- Which Key
