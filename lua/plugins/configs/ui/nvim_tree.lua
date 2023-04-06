@@ -19,6 +19,10 @@ return function()
         enable = true,
       },
     },
+    update_focused_file = {
+      enable = true,
+      update_root = true,
+    },
   })
 
   vim.keymap.set("n", "<C-b>", "<Cmd>NvimTreeToggle<CR>", { desc = "Open tree browser" })
