@@ -58,7 +58,7 @@ local editor = {
   {
     "kylechui/nvim-surround",
     event = "VeryLazy",
-    config = require("editor.nvim_surround")
+    config = require("editor.nvim_surround"),
   },
 }
 
