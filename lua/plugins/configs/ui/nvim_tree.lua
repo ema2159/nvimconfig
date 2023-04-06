@@ -14,7 +14,12 @@ return function()
         quit_on_open = false,
       },
     },
+    renderer = {
+      indent_markers = {
+        enable = true,
+      },
+    },
   })
 
-  vim.keymap.set("n", "<C-b>", "<Cmd>NvimTreeToggle<CR>", { desc = "Command Palette" })
+  vim.keymap.set("n", "<C-b>", "<Cmd>NvimTreeToggle<CR>", { desc = "Open tree browser" })
 end
