@@ -5,7 +5,7 @@ local ui = require("plugins.ui")
 
 local plugins = { themes, ui, tools, editor }
 
-COLORSCHEME = "catppuccin-frappe"
+COLORSCHEME = "monokai-pro"
 
 require("lazy").setup(plugins)
 
