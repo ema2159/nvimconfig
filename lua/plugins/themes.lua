@@ -69,6 +69,10 @@ local themes = {
 	{ 
     "rose-pine/neovim"
   },
+  {
+    'uloco/bluloco.nvim',
+    dependencies = { 'rktjmp/lush.nvim' },
+  },
 }
 
 return themes
