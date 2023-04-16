@@ -2,6 +2,7 @@ local function config_lazygit()
   local Terminal = require("toggleterm.terminal").Terminal
   local lazygit = Terminal:new({
     cmd = "lazygit",
+    count = 2,
     direction = "float",
     dir = "git_dir",
     size = 70,
