@@ -24,7 +24,15 @@ local function servers_config(lspconfig)
   })
   lspconfig.pyright.setup({})
   lspconfig.tsserver.setup({})
-  lspconfig.rust_analyzer.setup({})
+  lspconfig.rust_analyzer.setup({
+    settings = {
+      ["rust-analyzer"] = {
+        check = {
+          command = "clippy",
+        },
+      },
+    },
+  })
 end
 
 local function keymaps_config()
