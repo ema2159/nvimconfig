@@ -52,11 +52,12 @@ local function cmp_setup(cmp, luasnip)
     mapping = cmp_config_mappings(cmp, luasnip),
     sources = cmp.config.sources({
       { name = "nvim_lsp" },
+      { name = "nvim_lua" },
       { name = "luasnip" },
-      { name = "buffer" },
       { name = "path" },
+      { name = "buffer", keyword_length = 4 },
     }, {
-      { name = "buffer" },
+      { name = "buffer",  },
     }),
   })
 end
@@ -70,10 +71,22 @@ local function config_lsp()
   })
 end
 
+local function config_cmdline(cmp)
+  cmp.setup.cmdline(":", {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = "path" }
+    }, {
+      { name = "cmdline" }
+    })
+  })
+end
+
 return function()
   local cmp = require("cmp")
   local luasnip = require("luasnip")
 
   cmp_setup(cmp, luasnip)
+  config_cmdline(cmp)
   config_lsp()
 end
