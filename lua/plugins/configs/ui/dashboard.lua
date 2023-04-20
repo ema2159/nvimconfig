@@ -18,6 +18,10 @@ local function themes()
   return builtin.colorscheme
 end
 
+local function lazy()
+  vim.cmd("Lazy")
+end
+
 return function()
   require("dashboard").setup({
     theme = "doom",
@@ -47,7 +51,7 @@ return function()
           desc = "Recent Files",
           desc_hl = "String",
           key = "r",
-          keymap = "SPC f r",
+          keymap = "",
           key_hl = "Number",
           action = recent_files(),
         },
@@ -57,7 +61,7 @@ return function()
           desc = "Projects",
           desc_hl = "String",
           key = "p",
-          keymap = "SPC p p",
+          keymap = "",
           key_hl = "Number",
           action = projects(),
         },
@@ -67,7 +71,7 @@ return function()
           desc = "File Browser",
           desc_hl = "String",
           key = "b",
-          keymap = "SPC f f",
+          keymap = "",
           key_hl = "Number",
           action = browse_files(),
         },
@@ -77,9 +81,19 @@ return function()
           desc = "Themes",
           desc_hl = "String",
           key = "t",
-          keymap = "SPC o t",
+          keymap = "",
           key_hl = "Number",
           action = themes(),
+        },
+        {
+          icon = "  ",
+          icon_hl = "Title",
+          desc = "Plugins",
+          desc_hl = "String",
+          key = "u",
+          keymap = "",
+          key_hl = "Number",
+          action = lazy,
         },
       },
     },
