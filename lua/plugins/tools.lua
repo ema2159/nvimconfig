@@ -69,6 +69,15 @@ local tools = {
     config = require("tools.peek"),
     build = "deno task --quiet build:fast",
   },
+  -- Deferred clipboard
+  {
+    "EtiamNullam/deferred-clipboard.nvim",
+    config = function ()
+      require("deferred-clipboard").setup({
+        fallback = "unnamedplus"
+      })
+    end
+  }
 }
 
 return tools
