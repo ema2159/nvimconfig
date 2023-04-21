@@ -38,6 +38,6 @@ vim.opt.guifont = { "JetBrainsMono NFM", ":h12" }
 if vim.loop.os_uname().sysname == "Windows_NT" then
   vim.opt.shell = "powershell.exe"
   vim.opt.shellcmdflag = "-command"
-  vim.opt.shellquote = "\""
+  vim.opt.shellquote = '"'
   vim.opt.shellxquote = ""
 end

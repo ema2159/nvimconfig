@@ -57,7 +57,7 @@ local function cmp_setup(cmp, luasnip)
       { name = "path" },
       { name = "buffer", keyword_length = 4 },
     }, {
-      { name = "buffer",  },
+      { name = "buffer" },
     }),
   })
 end
@@ -75,10 +75,10 @@ local function config_cmdline(cmp)
   cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-      { name = "path" }
+      { name = "path" },
     }, {
-      { name = "cmdline" }
-    })
+      { name = "cmdline" },
+    }),
   })
 end
 

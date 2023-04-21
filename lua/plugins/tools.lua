@@ -72,7 +72,7 @@ local tools = {
   -- Deferred clipboard
   {
     "EtiamNullam/deferred-clipboard.nvim",
-    config = require("tools.deferred_clipboard")
+    config = require("tools.deferred_clipboard"),
   },
   -- Diffview
   {
