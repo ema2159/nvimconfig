@@ -72,12 +72,8 @@ local tools = {
   -- Deferred clipboard
   {
     "EtiamNullam/deferred-clipboard.nvim",
-    config = function ()
-      require("deferred-clipboard").setup({
-        fallback = "unnamedplus"
-      })
-    end
-  }
+    config = require("tools.deferred_clipboard")
+  },
 }
 
 return tools
