@@ -74,6 +74,13 @@ local tools = {
     "EtiamNullam/deferred-clipboard.nvim",
     config = require("tools.deferred_clipboard")
   },
+  -- Diffview
+  {
+    "sindrets/diffview.nvim",
+    config = require("tools.diffview"),
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = "VeryLazy",
+  },
 }
 
 return tools
