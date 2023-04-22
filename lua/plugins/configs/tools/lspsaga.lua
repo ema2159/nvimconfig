@@ -48,7 +48,7 @@ return function()
 
   vim.keymap.set("n", "gd", "<Cmd>Lspsaga peek_definition<CR>", { desc = "Peek to definition" })
   vim.keymap.set("n", "gD", goto_definition_mark, { desc = "Jump to definition" })
-  vim.keymap.set("n", "gb", go_back_from_definition, { desc = "Jump to definition" })
+  vim.keymap.set("n", "gb", go_back_from_definition, { desc = "Jump back from definition" })
   vim.keymap.set("n", "<leader>lD", "<Cmd>Lspsaga peek_type_definition<CR>", { desc = "Type definition" })
   vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", { desc = "Hover" })
   vim.keymap.set("n", "<leader>lo", "<Cmd>Lspsaga outline<CR>", { desc = "Show outline" })
