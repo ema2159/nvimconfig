@@ -1,6 +1,10 @@
 return function()
   require("trouble").setup({
     height = 15,
+    action_keys = { -- key mappings for actions in the trouble list
+      jump = { "o", "<tab>" }, -- jump to the diagnostic or open / close folds
+      jump_close = { "<cr>" }, -- jump to the diagnostic and close the list
+    },
   })
 
   vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { desc = "Trouble", silent = true, noremap = true })
