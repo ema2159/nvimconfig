@@ -37,6 +37,15 @@ local tools = {
           { "nvim-treesitter/nvim-treesitter" },
         },
       },
+      -- Navbuddy
+      {
+        "SmiteshP/nvim-navbuddy",
+        config = require("tools.navbuddy"),
+        dependencies = {
+          "SmiteshP/nvim-navic",
+          "MunifTanjim/nui.nvim",
+        },
+      },
     },
   },
   -- Mason
