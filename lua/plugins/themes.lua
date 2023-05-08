@@ -69,9 +69,15 @@ local themes = {
   {
     "rose-pine/neovim",
   },
+  -- Bluloco
   {
     "uloco/bluloco.nvim",
     dependencies = { "rktjmp/lush.nvim" },
+  },
+  -- Solarized
+  {
+    "maxmx03/solarized.nvim",
+    config = require("themes.solarized"),
   },
 }
 
