@@ -9,8 +9,7 @@ return function()
       return {
         LineNr = { bg = colors.bg },
         Visual = { fg = colors.cyan, bg = blend(colors.cyan, colors.bg, 0.15) },
-        -- NvimTreeNormal = { bg = colors.bg_alt },
-        -- NvimTreeNormalNC = { bg = colors.bg_alt },
+        FloatBorder = { link = "Float"}
       }
     end,
   })
