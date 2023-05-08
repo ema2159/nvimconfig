@@ -3,8 +3,8 @@ local function conf_keymaps()
   vim.keymap.set({ "n", "v", "i" }, "<C-PageUp>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Previous tab" })
   vim.keymap.set({ "n", "v", "i" }, "<C-PageDown>", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next tab" })
   -- Re-order tabs
-  vim.keymap.set({ "n", "v", "i" }, "<C-S-PageUp>", "<Cmd>BufferLineMovePrev<CR>", { desc = "Move tab left" })
-  vim.keymap.set({ "n", "v", "i" }, "<C-S-PageDown>", "<Cmd>BufferLineMoveNext<CR>", { desc = "Move tab right" })
+  vim.keymap.set({ "n", "v", "i" }, "<S-PageUp>", "<Cmd>BufferLineMovePrev<CR>", { desc = "Move tab left" })
+  vim.keymap.set({ "n", "v", "i" }, "<S-PageDown>", "<Cmd>BufferLineMoveNext<CR>", { desc = "Move tab right" })
   -- Buffer-picking mode
   vim.keymap.set("n", "<leader>tp", "<Cmd>BufferLinePick<CR>", { desc = "Pick tab" })
   vim.keymap.set("n", "<leader>tc", "<Cmd>BufferLinePickClose<CR>", { desc = "Pick tab close" })
