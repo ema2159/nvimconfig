@@ -14,8 +14,8 @@ local tools = {
   },
   -- Neoformat
   {
-    "sbdchd/neoformat",
-    config = require("tools.neoformat"),
+    "mhartington/formatter.nvim",
+    config = require("tools.formatter"),
     event = "VeryLazy",
   },
   -- Toggleterm
