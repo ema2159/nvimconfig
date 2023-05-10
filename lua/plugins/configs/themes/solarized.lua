@@ -9,7 +9,7 @@ return function()
       return {
         LineNr = { bg = colors.bg },
         Visual = { fg = colors.cyan, bg = blend(colors.cyan, colors.bg, 0.15) },
-        FloatBorder = { link = "Float"}
+        FloatBorder = { link = "Float" },
       }
     end,
   })
