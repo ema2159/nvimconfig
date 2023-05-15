@@ -46,6 +46,11 @@ local tools = {
           "MunifTanjim/nui.nvim",
         },
       },
+      -- LSP signature
+      {
+        "ray-x/lsp_signature.nvim",
+        config = require("tools.lsp_signature"),
+      },
     },
   },
   -- Mason
