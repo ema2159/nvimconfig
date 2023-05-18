@@ -3,7 +3,9 @@ return function()
 
   null_ls.setup({
     sources = {
-      null_ls.builtins.diagnostics.ruff,
+      null_ls.builtins.diagnostics.ruff.with({
+        method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+      }),
     },
   })
 end
