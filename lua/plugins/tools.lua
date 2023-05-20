@@ -9,6 +9,7 @@ local tools = {
       "nvim-telescope/telescope-ui-select.nvim",
       "nvim-telescope/telescope-symbols.nvim",
       "nvim-telescope/telescope-project.nvim",
+      "nvim-telescope/telescope-dap.nvim",
     },
     event = "VeryLazy",
   },
