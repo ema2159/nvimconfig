@@ -58,7 +58,10 @@ local tools = {
     "williamboman/mason.nvim",
     build = ":MasonUpdate", -- :MasonUpdate updates registry contents
     config = require("tools.mason"),
-    dependencies = { "williamboman/mason-lspconfig.nvim" },
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+      "jay-babu/mason-nvim-dap.nvim",
+    },
   },
   -- Null LS
   {
@@ -71,6 +74,11 @@ local tools = {
     "folke/trouble.nvim",
     config = require("tools.trouble"),
     dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  -- Nvim DAP
+  {
+    "mfussenegger/nvim-dap",
+    config = require("tools.nvim_dap"),
   },
   -- Vim Mundo
   {
