@@ -49,3 +49,10 @@ if vim.loop.os_uname().sysname == "Windows_NT" then
     vim.opt[option] = value
   end
 end
+
+-- Always enter in normal mode when enetring a buffer
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+  callback = function(_ev)
+    vim.cmd("stopinsert")
+  end,
+})
