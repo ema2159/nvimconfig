@@ -86,6 +86,12 @@ local tools = {
     "mfussenegger/nvim-dap",
     config = require("tools.nvim_dap"),
   },
+  -- Nvim DAP UI
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap" },
+    config = require("tools.nvim_dap_ui"),
+  },
   -- Vim Mundo
   {
     "simnalamburt/vim-mundo",

@@ -7,11 +7,6 @@ local function keymaps_config(dap)
   vim.keymap.set("n", "<leader>dS", dap.close, { desc = "DAP stop" })
   vim.keymap.set("n", "<leader>du", dap.up, { desc = "DAP up" })
   vim.keymap.set("n", "<leader>dd", dap.down, { desc = "DAP down" })
-  -- vim.keymap.set("n", "<leader>d_", :lua require'dap'.disconnect();require'dap'.stop();require'dap'.run_last()<CR>
-  vim.keymap.set("n", "<leader>dr", function()
-    dap.repl.open({}, "vsplit")
-  end, { desc = "DAP open REPL" })
-  -- vim.keymap.set("n", "<leader>dK", dap.ui.variables.hover, { desc = "" })
 end
 
 return function()
