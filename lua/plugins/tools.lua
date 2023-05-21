@@ -54,6 +54,11 @@ local tools = {
       },
     },
   },
+  -- Neodev
+  {
+    "folke/neodev.nvim",
+    config = require("tools.neodev"),
+  },
   -- Mason
   {
     "williamboman/mason.nvim",
