@@ -20,4 +20,5 @@ return function()
   })
 
   vim.keymap.set("n", "<leader>lf", "<Cmd>Format<CR>", { desc = "Format file" })
+  vim.keymap.set("v", "<leader>lf", "<Cmd>Format<CR>", { desc = "Format visual selection" })
 end
