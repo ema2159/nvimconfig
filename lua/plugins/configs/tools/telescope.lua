@@ -35,12 +35,16 @@ end
 local function conf_keymaps()
   local builtin = require("telescope.builtin")
   local extensions = require("telescope").extensions
+  local plenary_job = require("plenary.job")
 
   -- Built-in keymaps
   vim.keymap.set("n", "<leader>fs", builtin.find_files, { desc = "Find files" })
   vim.keymap.set("n", "<leader>gf", builtin.git_files, { desc = "Git files" })
   vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent files" })
-  vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
+  vim.keymap.set("n", "<leader>fg", function()
+    local git_toplevel = plenary_job:new({ command = "git", args = { "rev-parse", "--show-toplevel" } }):sync()[1]
+    builtin.live_grep({ cwd = git_toplevel })
+  end, { desc = "Live grep in project" })
   vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Open buffers" })
   vim.keymap.set("n", "<leader>hk", builtin.keymaps, { desc = "Describe keymaps" })
   vim.keymap.set("n", "<leader>hh", builtin.help_tags, { desc = "Help tags" })
