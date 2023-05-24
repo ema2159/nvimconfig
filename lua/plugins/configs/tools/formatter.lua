@@ -16,6 +16,9 @@ return function()
       rust = {
         require("formatter.filetypes.rust").rustfmt,
       },
+      markdown = {
+        require("formatter.filetypes.markdown").prettier,
+      },
     },
   })
 
