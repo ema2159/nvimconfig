@@ -5,6 +5,9 @@ return function()
         quit = { "q", "<Esc>" },
       },
     },
+    ui = {
+      code_action = "",
+    },
     outline = {
       keys = {
         quit = "q",
