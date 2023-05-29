@@ -1,4 +1,15 @@
-return function()
+
+  return function()
+  -- Highlights
+  vim.api.nvim_set_hl(0, "SagaNormal", { link = "Float" })
+  vim.api.nvim_set_hl(0, "SagaBorder", { link = "Float" })
+  vim.api.nvim_create_autocmd("ColorScheme", {
+    pattern = "*",
+    callback = function()
+      vim.api.nvim_set_hl(0, "SagaNormal", { link = "Float" })
+      vim.api.nvim_set_hl(0, "SagaBorder", { link = "Float" })
+    end,
+  })
   require("lspsaga").setup({
     code_action = {
       keys = {
@@ -7,6 +18,8 @@ return function()
     },
     ui = {
       code_action = "",
+      border = "rounded",
+      winblend= 10
     },
     outline = {
       keys = {
@@ -49,6 +62,7 @@ return function()
     vim.api.nvim_win_set_cursor(0, cursor_info)
   end
 
+  -- Keymaps
   vim.keymap.set("n", "gd", "<Cmd>Lspsaga peek_definition<CR>", { desc = "Peek to definition" })
   vim.keymap.set("n", "gD", goto_definition_mark, { desc = "Jump to definition" })
   vim.keymap.set("n", "gb", go_back_from_definition, { desc = "Jump back from definition" })
