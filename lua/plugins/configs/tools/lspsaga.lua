@@ -1,13 +1,13 @@
 
   return function()
   -- Highlights
-  vim.api.nvim_set_hl(0, "SagaNormal", { link = "Float" })
-  vim.api.nvim_set_hl(0, "SagaBorder", { link = "Float" })
+  vim.api.nvim_set_hl(0, "SagaNormal", { link = "Normal" })
+  vim.api.nvim_set_hl(0, "SagaBorder", { link = "Normal" })
   vim.api.nvim_create_autocmd("ColorScheme", {
     pattern = "*",
     callback = function()
-      vim.api.nvim_set_hl(0, "SagaNormal", { link = "Float" })
-      vim.api.nvim_set_hl(0, "SagaBorder", { link = "Float" })
+      vim.api.nvim_set_hl(0, "SagaNormal", { link = "Normal" })
+      vim.api.nvim_set_hl(0, "SagaBorder", { link = "Normal" })
     end,
   })
   require("lspsaga").setup({
