@@ -46,7 +46,7 @@ return function()
       },
       center = {
         {
-          icon = "  ",
+          icon = "  ",
           icon_hl = "Title",
           desc = "Recent Files",
           desc_hl = "String",
@@ -56,7 +56,7 @@ return function()
           action = recent_files(),
         },
         {
-          icon = "  ",
+          icon = "  ",
           icon_hl = "Title",
           desc = "Projects",
           desc_hl = "String",
