@@ -38,7 +38,10 @@ local function conf_keymaps()
   local plenary_job = require("plenary.job")
 
   -- Built-in keymaps
-  vim.keymap.set("n", "<leader>fs", builtin.find_files, { desc = "Find files" })
+  vim.keymap.set("n", "<leader>fs", function()
+    local git_toplevel = plenary_job:new({ command = "git", args = { "rev-parse", "--show-toplevel" } }):sync()[1]
+    builtin.find_files({ cwd = git_toplevel })
+  end, { desc = "Find files" })
   vim.keymap.set("n", "<leader>gf", builtin.git_files, { desc = "Git files" })
   vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent files" })
   vim.keymap.set("n", "<leader>fg", function()
