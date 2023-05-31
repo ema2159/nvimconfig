@@ -41,7 +41,6 @@ return function()
       map("n", "<leader>gB", function()
         gs.blame_line({ full = true })
       end, { desc = "Blame line full" })
-      map("n", "<leader>hd", gs.diffthis, { desc = "Diff this" })
     end,
   })
 end
