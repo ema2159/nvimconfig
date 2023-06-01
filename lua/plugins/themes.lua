@@ -21,6 +21,10 @@ local themes = {
   {
     "Mofiqul/dracula.nvim",
   },
+  -- Adwaita
+  {
+    "Mofiqul/adwaita.nvim",
+  },
   -- Kanagawa
   {
     "rebelot/kanagawa.nvim",
