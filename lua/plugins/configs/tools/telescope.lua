@@ -10,6 +10,7 @@ local function telescope_file_browser_conf()
   local fb_actions = require("telescope").extensions.file_browser.actions
 
   return {
+    dir_icon = "",
     -- disables netrw and use telescope-file-browser in its place
     hijack_netrw = true,
     mappings = {
