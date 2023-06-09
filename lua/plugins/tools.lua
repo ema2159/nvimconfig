@@ -103,11 +103,6 @@ local tools = {
     config = require("tools.peek"),
     build = "deno task --quiet build:fast",
   },
-  -- Deferred clipboard
-  {
-    "EtiamNullam/deferred-clipboard.nvim",
-    config = require("tools.deferred_clipboard"),
-  },
   -- Diffview
   {
     "sindrets/diffview.nvim",
