@@ -6,6 +6,13 @@ return function()
     log_level = vim.log.levels.INFO,
     -- All formatter configurations are opt-in
     filetype = {
+      bash = {
+        function()
+          return {
+            exe = "shfmt",
+          }
+        end
+      },
       lua = {
         require("formatter.filetypes.lua").stylua,
       },
@@ -16,8 +23,28 @@ return function()
       rust = {
         require("formatter.filetypes.rust").rustfmt,
       },
+      c = {
+        require("formatter.filetypes.c").clangformat,
+      },
+      cpp = {
+        require("formatter.filetypes.c").clangformat,
+      },
       markdown = {
         require("formatter.filetypes.markdown").prettier,
+      },
+      robot = {
+        function()
+          return {
+            exe = "robotidy",
+          }
+        end
+      },
+      sh = {
+        function()
+          return {
+            exe = "shfmt",
+          }
+        end
       },
     },
   })
