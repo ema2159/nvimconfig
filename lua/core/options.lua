@@ -49,3 +49,15 @@ if vim.loop.os_uname().sysname == "Windows_NT" then
     vim.opt[option] = value
   end
 end
+
+-- Autocommands
+
+-- Remove trailing whitespaces on save 
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = {"*"},
+  callback = function(_ev)
+    local save_cursor = vim.fn.getpos(".")
+    vim.cmd([[%s/\s\+$//e]])
+    vim.fn.setpos(".", save_cursor)
+  end,
+})
