@@ -23,6 +23,9 @@ return function()
         -- This is a current Neovim limitation.
         enabled = false, -- enables the Noice messages UI
       },
+      notify = {
+        enabled = false
+      },
     })
   end
 end
