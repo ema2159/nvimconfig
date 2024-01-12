@@ -1,4 +1,5 @@
 local function load_extensions()
+  require("telescope").load_extension("fzf")
   require("telescope").load_extension("file_browser")
   require("telescope").load_extension("ui-select")
   require("telescope").load_extension("notify")
@@ -13,6 +14,7 @@ local function telescope_file_browser_conf()
     dir_icon = "",
     -- disables netrw and use telescope-file-browser in its place
     hijack_netrw = true,
+    hidden = true,
     mappings = {
       ["i"] = {
         ["<M-CR>"] = fb_actions.create_from_prompt, -- Change to <S-CR> when appropriate terminal emulator is installed
@@ -27,10 +29,28 @@ local function telescope_ui_select_conf()
   }
 end
 
-local function fuzzy_find_under_cursor()
+local function find_exact(default)
   local builtin = require("telescope.builtin")
+  builtin.live_grep({
+    default_text = default,
+    search_dirs = { "%:p" },
+    path_display = { "hidden" },
+    disable_devicons = true,
+    winblend = 10,
+    preview_title = false,
+    results_title = false,
+    layout_config = {
+      height = 15
+    },
+    layout_strategy = "bottom_pane",
+    sorting_strategy = "ascending",
+    theme = "ivy"
+  })
+end
+
+local function find_under_cursor()
   local word_under_cursor = vim.fn.expand("<cword>")
-  builtin.current_buffer_fuzzy_find({ default_text = word_under_cursor })
+  find_exact(word_under_cursor)
 end
 
 local function conf_keymaps()
@@ -55,8 +75,9 @@ local function conf_keymaps()
   vim.keymap.set("n", "<leader>hm", builtin.man_pages, { desc = "Man pages" })
   vim.keymap.set("n", "<leader>ot", builtin.colorscheme, { desc = "Select theme" })
   vim.keymap.set("n", "/", builtin.current_buffer_fuzzy_find, { desc = "Fuzzy find in file" })
-  vim.keymap.set("n", "*", fuzzy_find_under_cursor, { desc = "Fuzzy find in file" })
-  vim.keymap.set("n", "#", fuzzy_find_under_cursor, { desc = "Fuzzy find in file" })
+  vim.keymap.set("n", "<C-s>", function() find_exact("") end, { desc = "Find in buffer exact match" })
+  vim.keymap.set("n", "*", find_under_cursor, { desc = "Fuzzy find in file" })
+  vim.keymap.set("n", "#", find_under_cursor, { desc = "Fuzzy find in file" })
 
   -- Extensions keymaps
   vim.keymap.set("n", "<leader>ff", extensions.file_browser.file_browser, { desc = "File browser" })
@@ -65,6 +86,9 @@ end
 
 return function()
   require("telescope").setup({
+    defaults = {
+      path_display={"smart"}
+    },
     pickers = {
       current_buffer_fuzzy_find = {
         winblend = 10,
