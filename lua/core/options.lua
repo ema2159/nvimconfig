@@ -52,7 +52,7 @@ end
 
 -- Autocommands
 
--- Remove trailing whitespaces on save 
+-- Remove trailing whitespaces on save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = {"*"},
   callback = function(_ev)
