@@ -10,6 +10,9 @@ local tools = {
       "nvim-telescope/telescope-symbols.nvim",
       "nvim-telescope/telescope-project.nvim",
       "nvim-telescope/telescope-dap.nvim",
+      {
+        "nvim-telescope/telescope-fzf-native.nvim", build = "make"
+      },
     },
     event = "VeryLazy",
   },
