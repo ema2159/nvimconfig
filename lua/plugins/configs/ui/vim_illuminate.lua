@@ -5,6 +5,7 @@ return function()
       "dashboard",
     },
     modes_allowlist = { "n", "i" },
+    large_file_cutoff = 1000,
   })
 
   vim.api.nvim_create_autocmd("Colorscheme", {
