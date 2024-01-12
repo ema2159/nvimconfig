@@ -79,6 +79,7 @@ local plugins = {
   -- Fidget
   {
     "j-hui/fidget.nvim",
+    event = "LspAttach",
     config = require("ui.fidget"),
   },
 }
