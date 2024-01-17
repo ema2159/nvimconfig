@@ -24,7 +24,7 @@
     outline = {
       keys = {
         quit = "q",
-        toggle_or_open = "<CR>",
+        toggle_or_jump = "<CR>",
       },
     },
     definition = {
@@ -32,7 +32,7 @@
     },
     finder = {
       keys = {
-        toggle_or_open = "<CR>",
+        toggle_or_jump = "<CR>",
         quit = { "q", "<ESC>" },
       },
     },
