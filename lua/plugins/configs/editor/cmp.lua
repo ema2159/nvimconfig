@@ -38,7 +38,7 @@ local function cmp_setup(cmp, luasnip)
   local lspkind = require("lspkind")
   cmp.setup({
     formatting = {
-      format = lspkind.cmp_format({ max_width = 50 }),
+      format = lspkind.cmp_format({ maxwidth = 50 }),
     },
     snippet = {
       expand = function(args)
