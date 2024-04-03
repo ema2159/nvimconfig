@@ -17,7 +17,7 @@
       },
     },
     ui = {
-      code_action = "",
+      code_action = "",
       border = "rounded",
       winblend= 10
     },
