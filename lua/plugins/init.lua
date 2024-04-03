@@ -5,7 +5,7 @@ local ui = require("plugins.ui")
 
 local plugins = { themes, ui, tools, editor }
 
-COLORSCHEME = "monokai-pro"
+COLORSCHEME = "monokai-pro-default"
 
 require("lazy").setup(plugins)
 
