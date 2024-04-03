@@ -1,4 +1,6 @@
 return function()
+
+  require('move').setup()
   -- Normal-mode commands
   vim.keymap.set("n", "<M-Down>", "<Cmd>MoveLine(1)<CR>", { desc = "Move line up" })
   vim.keymap.set("n", "<M-Up>", "<Cmd>MoveLine(-1)<CR>", { desc = "Move line down" })
