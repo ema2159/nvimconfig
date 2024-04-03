@@ -20,6 +20,7 @@ local themes = {
   -- Dracula
   {
     "Mofiqul/dracula.nvim",
+    config = require("themes.dracula"),
   },
   -- Adwaita
   {
