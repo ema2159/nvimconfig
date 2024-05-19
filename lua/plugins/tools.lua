@@ -72,12 +72,6 @@ local tools = {
       "jay-babu/mason-nvim-dap.nvim",
     },
   },
-  -- Null LS
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    config = require("tools.null_ls"),
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
   -- Trouble
   {
     "folke/trouble.nvim",
