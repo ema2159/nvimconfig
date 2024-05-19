@@ -23,6 +23,12 @@ local function telescope_file_browser_conf()
   }
 end
 
+local function telescope_project_conf()
+  return {
+    manual_mode = true,
+  }
+end
+
 local function telescope_ui_select_conf()
   return {
     theme = "dropdown",
@@ -115,6 +121,7 @@ return function()
     },
     extensions = {
       ["file_browser"] = telescope_file_browser_conf(),
+      ["project"] = telescope_project_conf(),
       ["ui-select"] = telescope_ui_select_conf(),
     },
   })
