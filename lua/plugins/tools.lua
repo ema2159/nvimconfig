@@ -82,6 +82,7 @@ local tools = {
   {
     "mfussenegger/nvim-dap",
     config = require("tools.nvim_dap"),
+    dependencies = { "nvim-neotest/nvim-nio" },
   },
   -- Nvim DAP UI
   {
