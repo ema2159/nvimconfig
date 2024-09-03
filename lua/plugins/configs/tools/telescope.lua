@@ -101,6 +101,7 @@ return function()
         preview_title = false,
         results_title = false,
         theme = "ivy",
+        sorting_strategy = "ascending",
         layout_config = {
           height = 15,
         },
