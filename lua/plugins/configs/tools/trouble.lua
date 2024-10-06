@@ -7,35 +7,22 @@ return function()
     },
   })
 
-  vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { desc = "Trouble", silent = true, noremap = true })
   vim.keymap.set(
     "n",
-    "<leader>xw",
-    "<cmd>TroubleToggle workspace_diagnostics<cr>",
-    { desc = "Trouble workspace", silent = true, noremap = true }
+    "<leader>xX",
+    "<cmd>Trouble diagnostics toggle focus=true<cr>",
+    { desc = "Diagnostics (Trouble)", silent = true, noremap = true }
   )
   vim.keymap.set(
     "n",
-    "<leader>xd",
-    "<cmd>TroubleToggle document_diagnostics<cr>",
-    { desc = "Trouble document", silent = true, noremap = true }
-  )
-  vim.keymap.set(
-    "n",
-    "<leader>xl",
-    "<cmd>TroubleToggle loclist<cr>",
-    { desc = "Trouble loclist", silent = true, noremap = true }
-  )
-  vim.keymap.set(
-    "n",
-    "<leader>xq",
-    "<cmd>TroubleToggle quickfix<cr>",
-    { desc = "Trouble quickfix", silent = true, noremap = true }
+    "<leader>xx",
+    "<cmd>Trouble diagnostics toggle filter.buf=0 focus=true<cr>",
+    { desc = "Buffer Diagnostics (Trouble)", silent = true, noremap = true }
   )
   vim.keymap.set(
     "n",
     "gR",
-    "<cmd>TroubleToggle lsp_references<cr>",
+    "<cmd>Trouble lsp toggle focus=true win.position=right<cr>",
     { desc = "Trouble LSP references", silent = true, noremap = true }
   )
 end

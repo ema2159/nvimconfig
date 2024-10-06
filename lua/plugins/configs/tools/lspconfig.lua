@@ -23,7 +23,8 @@ local function servers_config(lspconfig)
     },
   })
   lspconfig.pyright.setup({})
-  lspconfig.tsserver.setup({})
+  lspconfig.ruff_lsp.setup({})
+  lspconfig.ts_ls.setup({})
   lspconfig.rust_analyzer.setup({
     settings = {
       ["rust-analyzer"] = {
