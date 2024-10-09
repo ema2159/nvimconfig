@@ -1,4 +1,3 @@
 return function()
-  require("dracula").setup({
-  })
+	require("dracula").setup({})
 end
