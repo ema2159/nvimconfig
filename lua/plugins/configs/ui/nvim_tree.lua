@@ -1,5 +1,8 @@
 local function on_attach(bufnr)
   local api = require("nvim-tree.api")
+  local default_search = function()                                                          
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("/", true, false, true), "n", false)
+  end                                                                                        
 
   local function opts(desc)
     return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
@@ -49,10 +52,11 @@ local function on_attach(bufnr)
   vim.keymap.set("n", "p", api.fs.paste, opts("Paste"))
   vim.keymap.set("n", "P", api.node.navigate.parent, opts("Parent Directory"))
   vim.keymap.set("n", "q", api.tree.close, opts("Close"))
+  vim.keymap.set("n", "<esc>", api.tree.close, opts("Close"))
   vim.keymap.set("n", "r", api.fs.rename, opts("Rename"))
   vim.keymap.set("n", "R", api.tree.reload, opts("Refresh"))
-  vim.keymap.set("n", "s", api.node.run.system, opts("Run System"))
-  vim.keymap.set("n", "S", api.tree.search_node, opts("Search"))
+  vim.keymap.set("n", "S", api.node.run.system, opts("Run System"))
+  vim.keymap.set("n", "s", api.tree.search_node, opts("Search"))
   vim.keymap.set("n", "U", api.tree.toggle_custom_filter, opts("Toggle Hidden"))
   vim.keymap.set("n", "W", api.tree.collapse_all, opts("Collapse"))
   vim.keymap.set("n", "x", api.fs.cut, opts("Cut"))
@@ -65,6 +69,7 @@ local function on_attach(bufnr)
   -- Mappings migrated from view.mappings.list
   --
   -- You will need to insert "your code goes here" for any mappings with a custom action_cb
+  vim.keymap.set("n", "/", default_search, opts("Filter"))
   vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
   vim.keymap.set("n", "<M-CR>", api.tree.change_root_to_node, opts("CD"))
   vim.keymap.set("n", "P", function()
@@ -74,6 +79,9 @@ local function on_attach(bufnr)
 end
 
 return function()
+  local HEIGHT_RATIO = 0.8
+  local WIDTH_RATIO = 0.5 
+  
   require("nvim-tree").setup({
     on_attach = on_attach,
     actions = {
@@ -90,7 +98,33 @@ return function()
       enable = true,
       update_root = true,
     },
+    view = {
+      float = {
+        enable = true,
+        open_win_config = function()  
+        local screen_w = vim.opt.columns:get()
+        local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+        local window_w = screen_w * WIDTH_RATIO
+        local window_h = screen_h * HEIGHT_RATIO
+        local window_w_int = math.floor(window_w)
+        local window_h_int = math.floor(window_h)
+        local center_x = (screen_w - window_w) / 2
+        local center_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
+        return {
+            border = "rounded",
+            relative = "editor",
+            row = center_y,
+            col = center_x,
+            width = window_w_int,
+            height = window_h_int,
+          }
+        end,
+      },
+      width = function()                                      
+        return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
+      end,                                                    
+    },                                                        
   })
 
-  vim.keymap.set("n", "<C-b>", "<Cmd>NvimTreeToggle<CR>", { desc = "Open tree browser" })
+  vim.keymap.set("n", "<leader>ff", "<Cmd>NvimTreeToggle<CR>", { desc = "Open tree browser" })
 end
