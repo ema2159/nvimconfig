@@ -5,22 +5,7 @@ local function load_extensions()
   require("telescope").load_extension("notify")
   require("telescope").load_extension("project")
   require("telescope").load_extension("dap")
-end
-
-local function telescope_file_browser_conf()
-  local fb_actions = require("telescope").extensions.file_browser.actions
-
-  return {
-    dir_icon = "",
-    -- disables netrw and use telescope-file-browser in its place
-    hijack_netrw = true,
-    hidden = true,
-    mappings = {
-      ["i"] = {
-        ["<M-CR>"] = fb_actions.create_from_prompt, -- Change to <S-CR> when appropriate terminal emulator is installed
-      },
-    },
-  }
+  require("telescope").load_extension("live_grep_args")
 end
 
 local function telescope_project_conf()
@@ -35,6 +20,25 @@ local function telescope_ui_select_conf()
   }
 end
 
+local function telescope_live_grep_args_conf()                          
+  local lga_actions = require("telescope-live-grep-args.actions")       
+  local actions = require("telescope.actions")                          
+                                                                        
+  return {                                                              
+    auto_quoting = true, -- enable/disable auto-quoting                 
+    -- define mappings, e.g.                                            
+    mappings = { -- extend mappings                                     
+      i = {                                                             
+        ["<C-k>"] = lga_actions.quote_prompt(),                         
+        ["<C-t>"] = lga_actions.quote_prompt({ postfix = " -t" }),      
+        ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+        ["<C-q>"] = actions.send_to_qflist,                             
+      },                                                                
+      n = { ["<C-q>"] = actions.send_to_qflist },                       
+    },                                                                  
+  }                                                                     
+end
+
 local function find_exact(default)
   local builtin = require("telescope.builtin")
   builtin.live_grep({
@@ -45,12 +49,7 @@ local function find_exact(default)
     winblend = 10,
     preview_title = false,
     results_title = false,
-    layout_config = {
-      height = 15
-    },
-    layout_strategy = "bottom_pane",
     sorting_strategy = "ascending",
-    theme = "ivy"
   })
 end
 
@@ -71,10 +70,6 @@ local function conf_keymaps()
   end, { desc = "Find files" })
   vim.keymap.set("n", "<leader>gf", builtin.git_files, { desc = "Git files" })
   vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent files" })
-  vim.keymap.set("n", "<leader>fg", function()
-    local git_toplevel = plenary_job:new({ command = "git", args = { "rev-parse", "--show-toplevel" } }):sync()[1]
-    builtin.live_grep({ cwd = git_toplevel })
-  end, { desc = "Live grep in project" })
   vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Open buffers" })
   vim.keymap.set("n", "<leader>hk", builtin.keymaps, { desc = "Describe keymaps" })
   vim.keymap.set("n", "<leader>hh", builtin.help_tags, { desc = "Help tags" })
@@ -86,25 +81,23 @@ local function conf_keymaps()
   vim.keymap.set("n", "#", find_under_cursor, { desc = "Fuzzy find in file" })
 
   -- Extensions keymaps
-  vim.keymap.set("n", "<leader>ff", extensions.file_browser.file_browser, { desc = "File browser" })
   vim.keymap.set("n", "<leader>pp", extensions.project.project, { desc = "Project" })
+  vim.keymap.set("n", "<leader>fg", function()
+    local git_toplevel = plenary_job:new({ command = "git", args = { "rev-parse", "--show-toplevel" } }):sync()[1]
+    extensions.live_grep_args.live_grep_args({ cwd = git_toplevel })
+  end, { desc = "Live grep in project" })
 end
 
 return function()
   require("telescope").setup({
     defaults = {
-      path_display={"smart"}
+      path_display = { "smart" }
     },
     pickers = {
       current_buffer_fuzzy_find = {
         winblend = 10,
         preview_title = false,
         results_title = false,
-        theme = "ivy",
-        sorting_strategy = "ascending",
-        layout_config = {
-          height = 15,
-        },
       },
       commands = {
         theme = "dropdown",
@@ -124,6 +117,7 @@ return function()
       ["file_browser"] = telescope_file_browser_conf(),
       ["project"] = telescope_project_conf(),
       ["ui-select"] = telescope_ui_select_conf(),
+      ["live_grep_args"] = telescope_live_grep_args_conf(),
     },
   })
 
