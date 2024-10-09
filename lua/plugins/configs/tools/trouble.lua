@@ -1,9 +1,9 @@
 return function()
   require("trouble").setup({
     height = 15,
-    action_keys = { -- key mappings for actions in the trouble list
-      jump = { "o", "<tab>" }, -- jump to the diagnostic or open / close folds
-      jump_close = { "<cr>" }, -- jump to the diagnostic and close the list
+    keys = { -- key mappings for actions in the trouble list
+      o = "jump", -- jump to the diagnostic or open / close folds
+      ["<cr>"] = "jump_close", -- jump to the diagnostic and close the list
     },
   })
 
@@ -21,8 +21,14 @@ return function()
   )
   vim.keymap.set(
     "n",
-    "gR",
-    "<cmd>Trouble lsp toggle focus=true win.position=right<cr>",
-    { desc = "Trouble LSP references", silent = true, noremap = true }
+    "<leader>xq",
+    "<cmd>Trouble qflist toggle focus=true<cr>",
+    { desc = "Quickfix list (Trouble)", silent = true, noremap = true }
+  )
+  vim.keymap.set(
+    "n",
+    "xr",
+    "<cmd>Trouble diagnostics toggle filter.buf=0 focus=true<cr>",
+    { desc = "Trouble LSP references (Trouble)", silent = true, noremap = true }
   )
 end
