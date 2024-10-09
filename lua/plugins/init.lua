@@ -5,7 +5,9 @@ local ui = require("plugins.ui")
 
 local plugins = { themes, ui, tools, editor }
 
-COLORSCHEME = "monokai-pro-default"
+local colorschemes = { "catppuccin-frappe", "duskfox", "onedark_vivid", "vscode" }
+math.randomseed(os.time())
+COLORSCHEME = colorschemes[math.random(#colorschemes)]
 
 require("lazy").setup(plugins)
 

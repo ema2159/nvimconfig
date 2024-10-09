@@ -1,3 +1,3 @@
 return function()
-	require("monokai-pro").setup()
+  require("monokai-pro").setup()
 end
