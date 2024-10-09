@@ -1,6 +1,5 @@
 local function browse_files()
-  local extensions = require("telescope").extensions
-  return extensions.file_browser.file_browser
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<esc><space>ff", true, false, true), "m", false)
 end
 
 local function recent_files()
@@ -73,7 +72,7 @@ return function()
           key = "b",
           keymap = "",
           key_hl = "Number",
-          action = browse_files(),
+          action = browse_files,
         },
         {
           icon = "  ",
