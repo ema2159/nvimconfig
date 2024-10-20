@@ -5,7 +5,16 @@ local ui = require("plugins.ui")
 
 local plugins = { themes, ui, tools, editor }
 
-local colorschemes = { "catppuccin-frappe", "duskfox", "onedark_vivid", "vscode" }
+local colorschemes = {
+  "monokai-pro-default",
+  "catppuccin-frappe",
+  "duskfox",
+  "onedark",
+  "vscode",
+  "tokyonight-storm",
+  "tokyonight-moon",
+  "github_dark",
+}
 math.randomseed(os.time())
 COLORSCHEME = colorschemes[math.random(#colorschemes)]
 
