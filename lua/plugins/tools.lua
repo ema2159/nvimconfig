@@ -110,6 +110,11 @@ local tools = {
     dependencies = { "nvim-lua/plenary.nvim" },
     event = "VeryLazy",
   },
+  -- Neogen
+  {
+    "danymat/neogen",
+    config = require("tools.neogen"),
+  },
 }
 
 return tools
