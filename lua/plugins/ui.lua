@@ -47,11 +47,13 @@ local plugins = {
   },
   -- Nvim Tree
   {
-    "nvim-tree/nvim-tree.lua",
+    "nvim-neo-tree/neo-tree.nvim",
     dependencies = {
-      "nvim-tree/nvim-web-devicons",
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
     },
-    config = require("ui.nvim_tree"),
+    config = require("ui.neotree"),
   },
   -- Noice
   {
