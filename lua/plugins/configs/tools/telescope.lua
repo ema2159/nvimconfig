@@ -82,12 +82,22 @@ local function conf_keymaps()
   vim.keymap.set("n", "*", find_under_cursor, { desc = "Fuzzy find in file" })
   vim.keymap.set("n", "#", find_under_cursor, { desc = "Fuzzy find in file" })
 
-  -- Extensions keymaps
+    -- Extensions keymaps
   vim.keymap.set("n", "<leader>pp", extensions.project.project, { desc = "Project" })
   vim.keymap.set("n", "<leader>fg", function()
     local git_toplevel = plenary_job:new({ command = "git", args = { "rev-parse", "--show-toplevel" } }):sync()[1]
     extensions.live_grep_args.live_grep_args({ cwd = git_toplevel })
   end, { desc = "Live grep in project" })
+  vim.keymap.set("n", "<leader>tr", builtin.resume, { desc = "Telescope resume" })
+  vim.keymap.set("n", "<leader>ml", function()
+    builtin.marks({ mark_type = "local" })
+  end, { desc = "Local marks" })
+  vim.keymap.set("n", "<leader>mg", function()
+    builtin.marks({ mark_type = "global" })
+  end, { desc = "Global marks" })
+  vim.keymap.set("n", "<leader>ma", function()
+    builtin.marks({ mark_type = "all" })
+  end, { desc = "All marks" })
 end
 
 return function()
