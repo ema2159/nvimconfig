@@ -101,7 +101,6 @@ local function conf_keymaps()
 end
 
 return function()
-  require("telescope").setup({
   -- Custom actions
   local action_state = require("telescope.actions.state")
 
