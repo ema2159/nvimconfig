@@ -102,8 +102,22 @@ end
 
 return function()
   require("telescope").setup({
+  -- Custom actions
+  local action_state = require("telescope.actions.state")
+
+  local function paste_to_prompt(prompt_bufnr)
+    local last_yanked = vim.fn.getreg('"')
+    action_state.get_current_picker(prompt_bufnr):set_prompt(last_yanked)
+  end
+
+  require("telescope").setup({
     defaults = {
       path_display = { "smart" },
+      mappings = {
+        n = {
+          ["p"] = paste_to_prompt,
+        },
+      },
     },
     pickers = {
       current_buffer_fuzzy_find = {
