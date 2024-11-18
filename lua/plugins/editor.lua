@@ -5,11 +5,11 @@ local editor = {
     event = "BufEnter",
     config = require("editor.comment"),
   },
-  -- Hop
+  -- Flash
   {
-    "phaazon/hop.nvim",
-    event = "BufEnter",
-    config = require("editor.hop"),
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    config = require("editor.flash"),
   },
   -- Move
   {
