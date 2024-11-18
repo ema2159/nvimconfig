@@ -94,7 +94,6 @@ local plugins = {
     },
     config = require("ui.markdown"),
   },
-
 }
 
 return plugins
