@@ -18,6 +18,17 @@ local tools = {
     },
     event = "VeryLazy",
   },
+  -- Arrow
+  {
+    "otavioschwanck/arrow.nvim",
+    dependencies = {
+      { "nvim-tree/nvim-web-devicons" },
+    },
+    event = "VeryLazy",
+    config = require("tools.arrow"),
+    opts = {
+    },
+  },
   -- Neoformat
   {
     "mhartington/formatter.nvim",
