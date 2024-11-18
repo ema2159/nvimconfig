@@ -84,6 +84,17 @@ local plugins = {
     event = "LspAttach",
     config = require("ui.fidget"),
   },
+  -- Markdown nvim
+  {
+    "MeanderingProgrammer/markdown.nvim",
+    name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter", -- Mandatory
+      "nvim-tree/nvim-web-devicons", -- Optional but recommended
+    },
+    config = require("ui.markdown"),
+  },
+
 }
 
 return plugins
