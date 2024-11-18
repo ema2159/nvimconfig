@@ -20,6 +20,7 @@ local function telescope_ui_select_conf()
   }
 end
 
+-- Configurations
 local function telescope_live_grep_args_conf()
   local lga_actions = require("telescope-live-grep-args.actions")
   local actions = require("telescope.actions")
@@ -32,9 +33,7 @@ local function telescope_live_grep_args_conf()
         ["<C-k>"] = lga_actions.quote_prompt(),
         ["<C-t>"] = lga_actions.quote_prompt({ postfix = " -t" }),
         ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
-        ["<C-q>"] = actions.send_to_qflist,
       },
-      n = { ["<C-q>"] = actions.send_to_qflist },
     },
   }
 end
@@ -115,6 +114,10 @@ return function()
       mappings = {
         n = {
           ["p"] = paste_to_prompt,
+          ["<C-q>"] = actions.send_to_qflist,
+        },
+        i = {
+          ["<C-q>"] = actions.send_to_qflist,
         },
       },
     },
